@@ -10,7 +10,7 @@ export const LEVELS: Record<number, Level> = {
       "police_station": {
         id: "police_station",
         name: "Skopje Central Police Dept",
-        imageSource: "assets/locations/police_station.jpg",
+        imageSource: "/assets/locations/police_station.jpg",
         description: "The precinct smells of damp concrete and cheap tobacco. Viktor sits at his desk, head in hands. This is the only place in Skopje where the truth feels like a burden rather than a secret.",
         npcs: ["viktor", "sandra"],
         searches: [
@@ -21,7 +21,7 @@ export const LEVELS: Record<number, Level> = {
       "stone_bridge": {
         id: "stone_bridge",
         name: "Stone Bridge (Crime Scene)",
-        imageSource: "assets/locations/stone_bridge.jpg",
+        imageSource: "/assets/locations/stone_bridge.jpg",
         description: "Police tape flutters in the wind. The Vardar river rages below. The spot where Stojanov fell is marked with a dark stain. The city's center feels cold tonight.",
         npcs: [],
         searches: [
@@ -33,7 +33,7 @@ export const LEVELS: Record<number, Level> = {
       "debar_maalo": {
         id: "debar_maalo",
         name: "Debar Maalo - Kafana Trend",
-        imageSource: "assets/locations/debar_maalo.jpg",
+        imageSource: "/assets/locations/debar_maalo.jpg",
         description: "The bohemian quarter is quiet now. 'Trend' is empty, but the scent of grilled meat lingers. This is where Stojanov spent his final hours.",
         npcs: ["waiter"],
         searches: [
@@ -43,7 +43,7 @@ export const LEVELS: Record<number, Level> = {
       "hotel_arka": {
         id: "hotel_arka",
         name: "Hotel Arka - Room 402",
-        imageSource: "assets/locations/hotel_arka.jpg",
+        imageSource: "/assets/locations/hotel_arka.jpg",
         description: "A luxury boutique hotel in the Old Bazaar. Room 402 is clean, but there's a lingering scent of expensive perfume. Stojanov clearly used this for 'private' matters.",
         npcs: [],
         searches: [
@@ -54,7 +54,7 @@ export const LEVELS: Record<number, Level> = {
       "vardar_galleys": {
         id: "vardar_galleys",
         name: "Vardar River Galleys",
-        imageSource: "assets/locations/vardar_galleys.jpg",
+        imageSource: "/assets/locations/vardar_galleys.jpg",
         description: "The wooden tourist ships look like ghosts in the dark. The river current is strong here, swirling around the piles of the bridge.",
         npcs: [],
         searches: [
@@ -64,7 +64,7 @@ export const LEVELS: Record<number, Level> = {
       "markov_residence": {
         id: "markov_residence",
         name: "Markov Estate",
-        imageSource: "assets/locations/markov_residence.jpg",
+        imageSource: "/assets/locations/markov_residence.jpg",
         description: "A fortress of glass and marble in Vodno. The home of Goran Markov and his wife, Marija. Money can't hide the tension in the air here.",
         npcs: ["markov", "marija"],
         searches: [
@@ -78,7 +78,7 @@ export const LEVELS: Record<number, Level> = {
         name: "Chief Inspector Viktor Nikolov",
         role: "Partner",
         description: "Tall, weary, and perpetually reaching for his temples.",
-        imageSource: "assets/characters/viktor.jpg",
+        imageSource: "/assets/characters/viktor.jpg",
         initialNode: "v_start",
         dialogue: {
           "v_start": {
@@ -111,7 +111,7 @@ export const LEVELS: Record<number, Level> = {
         name: "Dr. Sandra Kovac",
         role: "Medical Examiner",
         description: "Clinical, sharp, and impatient.",
-        imageSource: "assets/characters/sandra.jpg",
+        imageSource: "/assets/characters/sandra.jpg",
         initialNode: "s_start",
         dialogue: {
           "s_start": {
@@ -148,7 +148,7 @@ export const LEVELS: Record<number, Level> = {
         name: "Lazo",
         role: "Waiter",
         description: "Knows too much, says too little.",
-        imageSource: "assets/characters/waiter.jpg",
+        imageSource: "/assets/characters/waiter.jpg",
         initialNode: "l_start",
         dialogue: {
           "l_start": {
@@ -177,7 +177,7 @@ export const LEVELS: Record<number, Level> = {
         name: "Goran Markov",
         role: "Business Partner",
         description: "A man who buys cities and burns bridges.",
-        imageSource: "assets/characters/markov.jpg",
+        imageSource: "/assets/characters/markov.jpg",
         initialNode: "m_start",
         dialogue: {
           "m_start": {
@@ -210,7 +210,7 @@ export const LEVELS: Record<number, Level> = {
         name: "Marija Markova",
         role: "The Wife",
         description: "Dressed in mourning black. Her eyes are dry and cold.",
-        imageSource: "assets/characters/marija.jpg",
+        imageSource: "/assets/characters/marija.jpg",
         initialNode: "mr_start",
         dialogue: {
           "mr_start": {
@@ -270,16 +270,16 @@ export const LEVELS: Record<number, Level> = {
       }
     },
     clues: {
-      "tire_track": { id: "tire_track", name: "SUV Tire Tracks", imageSource: "assets/evidence/tire_track.jpg", description: "Heavy treads found at the Stone Bridge. Matches Goran Markov's G-Wagon." },
-      "receipt": { id: "receipt", name: "Kafana Receipt", imageSource: "assets/evidence/receipt.jpg", description: "A receipt from Debar Maalo. Leads to Lazo the waiter." },
-      "hotel_card": { id: "hotel_card", name: "Hotel Arka Card", imageSource: "assets/evidence/hotel_card.jpg", description: "Found in Debar Maalo. Mentions Room 402." },
-      "cufflink": { id: "cufflink", name: "S-Cufflink", imageSource: "assets/evidence/cufflink.jpg", description: "Found in Hotel Arka. A match for the victim's missing one." },
-      "blackmail_docs": { id: "blackmail_docs", name: "Blackmail Files", imageSource: "assets/evidence/blackmail_docs.jpg", description: "Proves Stojanov was forcing Marija to spy on her husband." },
-      "murder_weapon": { id: "murder_weapon", name: "Silver Trowel", imageSource: "assets/evidence/murder_weapon.jpg", description: "The murder weapon. Found in the Vardar. Needs lab analysis." },
-      "fingerprints": { id: "fingerprints", name: "Marija's Prints", imageSource: "assets/evidence/fingerprints.jpg", description: "Forensic match: Marija's fingerprints found on the murder weapon." },
-      "forensic_report": { id: "forensic_report", name: "Cufflink Lab Report", imageSource: "assets/evidence/forensic_report.jpg", description: "Skin cells on the cufflink provide a DNA match for Marija Markova." },
-      "missing_statuette": { id: "missing_statuette", name: "Empty Display Case", imageSource: "assets/evidence/missing_statuette.jpg", description: "The presentation case for the silver trowel is empty at the Markov house." },
-      "migraine_relief": { id: "migraine_relief", name: "Painkillers", imageSource: "assets/evidence/migraine_relief.jpg", description: "Viktor's meds. Essential for keeping him focused." }
+      "tire_track": { id: "tire_track", name: "SUV Tire Tracks", imageSource: "/assets/evidence/tire_track.jpg", description: "Heavy treads found at the Stone Bridge. Matches Goran Markov's G-Wagon." },
+      "receipt": { id: "receipt", name: "Kafana Receipt", imageSource: "/assets/evidence/receipt.jpg", description: "A receipt from Debar Maalo. Leads to Lazo the waiter." },
+      "hotel_card": { id: "hotel_card", name: "Hotel Arka Card", imageSource: "/assets/evidence/hotel_card.jpg", description: "Found in Debar Maalo. Mentions Room 402." },
+      "cufflink": { id: "cufflink", name: "S-Cufflink", imageSource: "/assets/evidence/cufflink.jpg", description: "Found in Hotel Arka. A match for the victim's missing one." },
+      "blackmail_docs": { id: "blackmail_docs", name: "Blackmail Files", imageSource: "/assets/evidence/blackmail_docs.jpg", description: "Proves Stojanov was forcing Marija to spy on her husband." },
+      "murder_weapon": { id: "murder_weapon", name: "Silver Trowel", imageSource: "/assets/evidence/murder_weapon.jpg", description: "The murder weapon. Found in the Vardar. Needs lab analysis." },
+      "fingerprints": { id: "fingerprints", name: "Marija's Prints", imageSource: "/assets/evidence/fingerprints.jpg", description: "Forensic match: Marija's fingerprints found on the murder weapon." },
+      "forensic_report": { id: "forensic_report", name: "Cufflink Lab Report", imageSource: "/assets/evidence/forensic_report.jpg", description: "Skin cells on the cufflink provide a DNA match for Marija Markova." },
+      "missing_statuette": { id: "missing_statuette", name: "Empty Display Case", imageSource: "/assets/evidence/missing_statuette.jpg", description: "The presentation case for the silver trowel is empty at the Markov house." },
+      "migraine_relief": { id: "migraine_relief", name: "Painkillers", imageSource: "/assets/evidence/migraine_relief.jpg", description: "Viktor's meds. Essential for keeping him focused." }
     },
     solution: {
       killerId: "marija",
