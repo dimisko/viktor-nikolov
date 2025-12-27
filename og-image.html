@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG Image - Skopje Confidential</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            font-family: 'Courier New', 'JetBrains Mono', monospace;
+            color: #d1d1d1;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Grainy texture overlay */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/p6.png');
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            padding: 60px;
+        }
+        
+        .content {
+            width: 100%;
+            max-width: 1000px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #7c2d12;
+            color: white;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            border: 2px solid #9a3412;
+        }
+        
+        .title {
+            font-size: 72px;
+            font-weight: bold;
+            color: #fbbf24;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            font-size: 28px;
+            color: #78716c;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        
+        .description {
+            font-size: 24px;
+            color: #a3a3a3;
+            line-height: 1.6;
+            max-width: 900px;
+            margin-bottom: 50px;
+            border-left: 4px solid #fbbf24;
+            padding-left: 30px;
+        }
+        
+        .quote {
+            font-size: 20px;
+            color: #d4a574;
+            font-style: italic;
+            text-align: right;
+            margin-top: 40px;
+            border-top: 1px solid #3f3f46;
+            padding-top: 30px;
+        }
+        
+        .author {
+            font-size: 18px;
+            color: #78716c;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+        
+        .accent-line {
+            width: 100px;
+            height: 4px;
+            background: #fbbf24;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="badge">TOP SECRET</div>
+            <div class="title">SKOPJE<br>CONFIDENTIAL</div>
+            <div class="accent-line"></div>
+            <div class="subtitle">Viktor Nikolov</div>
+            <div class="description">
+                A gritty text-based investigative adventure set in the heart of Macedonia. 
+                Partner with Chief Inspector Viktor Nikolov to solve complex crimes in a 
+                police dossier-style interface.
+            </div>
+            <div class="quote">
+                "Believe in the evidence. The rest is just noise."
+                <div class="author">— Chief Inspector Viktor Nikolov</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
