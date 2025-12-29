@@ -133,10 +133,12 @@ const IntroScreen: React.FC<{ onStart: () => void }> = ({ onStart }) => (
     <div className="max-w-2xl w-full border border-zinc-800 p-6 sm:p-8 bg-zinc-900/30 space-y-6 my-auto">
       <div className="flex justify-between items-start border-b border-zinc-800 pb-4">
         <div>
-          <h2 className="text-xl sm:text-2xl font-bold text-zinc-100 tracking-tighter">SKOPJE CONFIDENTIAL</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-zinc-100 tracking-tighter">CONFIDENTIAL</h2>
           <p className="text-[8px] sm:text-[10px] text-amber-600 uppercase tracking-widest">Dept. Serious Crimes</p>
         </div>
-        <span className="text-zinc-600 font-mono text-[10px] sm:text-xs">LOG_01-2024</span>
+        <span className="text-zinc-600 font-mono text-[10px] sm:text-xs">
+          LOG_{String(new Date().getMonth() + 1).padStart(2, '0')}-{new Date().getFullYear()}
+        </span>
       </div>
       
       <div className="space-y-4 font-mono text-[10px] sm:text-xs text-zinc-400 leading-relaxed max-h-[50vh] overflow-y-auto pr-2">
