@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Generator</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 20px;
+            background: #0a0a0a;
+            color: #d1d1d1;
+        }
+        canvas {
+            border: 1px solid #3f3f46;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #fbbf24;
+            color: #0a0a0a;
+            border: none;
+            cursor: pointer;
+            font-family: monospace;
+            font-weight: bold;
+            margin: 5px;
+        }
+        button:hover {
+            background: #d97706;
+        }
+    </style>
+</head>
+<body>
+    <h1>PWA Icon Generator</h1>
+    <p>Generate PNG icons from the SVG favicon</p>
+    
+    <div id="preview"></div>
+    
+    <button onclick="generateIcons()">Generate Icons</button>
+    <button onclick="downloadAll()">Download All Icons</button>
+    
+    <script>
+        const svgString = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="1" dy="1" stdDeviation="2" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  
+  <rect width="100" height="100" fill="#0a0a0a" rx="4"/>
+  <rect x="3" y="3" width="94" height="94" fill="none" stroke="#3f3f46" stroke-width="1.5" rx="3"/>
+  <circle cx="65" cy="35" r="18" fill="none" stroke="url(#amberGrad)" stroke-width="3" filter="url(#shadow)"/>
+  <line x1="78" y1="48" x2="88" y2="58" stroke="url(#amberGrad)" stroke-width="3.5" stroke-linecap="round" filter="url(#shadow)"/>
+  <text x="25" y="62" font-family="'Courier New', 'JetBrains Mono', monospace" font-size="28" font-weight="bold" fill="#fbbf24" letter-spacing="-1" text-anchor="middle">VN</text>
+  <line x1="18" y1="68" x2="32" y2="68" stroke="#d97706" stroke-width="1.5"/>
+</svg>`;
+
+        const sizes = [192, 512];
+        let generatedImages = [];
+
+        function generateIcons() {
+            const preview = document.getElementById('preview');
+            preview.innerHTML = '<h2>Preview:</h2>';
+            
+            sizes.forEach(size => {
+                const canvas = document.createElement('canvas');
+                canvas.width = size;
+                canvas.height = size;
+                const ctx = canvas.getContext('2d');
+                
+                const img = new Image();
+                const svgBlob = new Blob([svgString], { type: 'image/svg+xml' });
+                const url = URL.createObjectURL(svgBlob);
+                
+                img.onload = () => {
+                    ctx.drawImage(img, 0, 0, size, size);
+                    URL.revokeObjectURL(url);
+                    
+                    const div = document.createElement('div');
+                    div.innerHTML = `<p>${size}x${size}</p>`;
+                    div.appendChild(canvas);
+                    preview.appendChild(div);
+                    
+                    generatedImages.push({ size, canvas });
+                };
+                
+                img.src = url;
+            });
+        }
+
+        function downloadAll() {
+            generatedImages.forEach(({ size, canvas }) => {
+                canvas.toBlob((blob) => {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `icon-${size}.png`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                });
+            });
+        }
+        
+        // Auto-generate on load
+        window.onload = () => {
+            setTimeout(generateIcons, 100);
+        };
+    </script>
+</body>
+</html>
+

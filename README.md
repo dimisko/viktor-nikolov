@@ -13,6 +13,7 @@ You are a Junior Detective transferred from Bitola, assigned to work alongside t
 - **Location Exploration**: Visit multiple locations across Skopje to follow leads
 - **Evidence Collection**: Build your case by discovering and connecting clues
 - **Case Solving**: Accuse the correct suspect with the right motive and evidence
+- **Progressive Web App (PWA)**: Install as an app on your device, works offline
 
 ## How to Play
 
@@ -57,6 +58,25 @@ npm run preview
 - TypeScript
 - Vite
 - TailwindCSS
+- Progressive Web App (PWA) with Service Worker
+
+## Installing as PWA
+
+This app can be installed as a Progressive Web App on your device:
+
+1. **On Desktop (Chrome/Edge)**:
+   - Look for the install icon in the address bar
+   - Click it and select "Install"
+
+2. **On Mobile (iOS Safari)**:
+   - Tap the Share button
+   - Select "Add to Home Screen"
+
+3. **On Mobile (Android Chrome)**:
+   - Tap the menu (three dots)
+   - Select "Install app" or "Add to Home screen"
+
+Once installed, the app will work offline and feel like a native application!
 
 ---
 

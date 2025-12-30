@@ -18,6 +18,24 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
-      }
+      },
+      build: {
+        rollupOptions: {
+          output: {
+            // Ensure service worker and manifest are not hashed
+            entryFileNames: 'assets/[name].[hash].js',
+            chunkFileNames: 'assets/[name].[hash].js',
+            assetFileNames: (assetInfo) => {
+              const name = assetInfo.name || '';
+              if (name === 'sw.js' || name === 'manifest.json' || name === 'register-sw.js' || name.endsWith('favicon.svg')) {
+                return '[name][extname]';
+              }
+              return 'assets/[name].[hash][extname]';
+            }
+          }
+        }
+      },
+      // Copy service worker and manifest to root
+      publicDir: 'public'
     };
 });
