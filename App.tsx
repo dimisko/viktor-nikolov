@@ -34,7 +34,7 @@ const Button: React.FC<{
 
 // --- PERSISTENT IMAGE ASSETS ---
 
-const DB_NAME = "skopje_confidential_assets";
+const DB_NAME = "viktor_nikolov_assets";
 const DB_VERSION = 1;
 const STORE_NAME = "images";
 

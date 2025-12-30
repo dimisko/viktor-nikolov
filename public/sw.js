@@ -1,6 +1,6 @@
-// Service Worker for Skopje Confidential
-const CACHE_NAME = 'skopje-confidential-v1';
-const RUNTIME_CACHE = 'skopje-confidential-runtime-v1';
+// Service Worker for Viktor Nikolov
+const CACHE_NAME = 'viktor-nikolov-v1';
+const RUNTIME_CACHE = 'viktor-nikolov-runtime-v1';
 
 // Assets to cache on install
 const PRECACHE_ASSETS = [
