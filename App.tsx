@@ -252,6 +252,13 @@ const App: React.FC = () => {
     const dismissed = localStorage.getItem('pwa_install_dismissed');
     if (isStandalone || dismissed) return;
 
+    // Event may have already fired before React mounted — grab it from global
+    if ((window as any).__pwaInstallPrompt) {
+      setInstallPrompt((window as any).__pwaInstallPrompt);
+      return;
+    }
+
+    // Fallback: listen in case it fires after mount
     const handler = (e: Event) => {
       e.preventDefault();
       setInstallPrompt(e);

@@ -37,7 +37,14 @@
     <meta name="twitter:description" content="A gritty text-based investigative adventure set in the heart of Macedonia. Partner with Chief Inspector Viktor Nikolov to solve complex crimes.">
     <meta name="twitter:image" content="https://viktor-nikolov.vercel.app/assets/locations/stone_bridge.jpg">
     <meta name="twitter:image:alt" content="Stone Bridge">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+  window.__pwaInstallPrompt = null;
+  window.addEventListener('beforeinstallprompt', function(e) {
+    e.preventDefault();
+    window.__pwaInstallPrompt = e;
+  });
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
