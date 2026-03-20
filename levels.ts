@@ -55,10 +55,10 @@ export const LEVELS: Record<number, Level> = {
         id: "vardar_galleys",
         name: "Vardar River Galleys",
         imageSource: "/assets/locations/vardar_galleys.jpg",
-        description: "The wooden tourist ships look like ghosts in the dark. The river current is strong here, swirling around the piles of the bridge.",
-        npcs: [],
+        description: "The wooden tourist ships look like ghosts in the dark. A guard post sits at the end of the dock, a single lamp burning. Someone was here last night.",
+        npcs: ["guard"],
         searches: [
-          { id: "s7", description: "Caught in the low-hanging branches of a willow tree near the galley, you spot something silver and sharp. It's a heavy commemorative trowel—etched with the victim's name and stained with blood.", clueId: "murder_weapon" }
+          { id: "s7", description: "At the guard post you find a worn logbook left open on the desk. The entry for last night reads: '02:58 — Female, dark coat, carrying something bundled. Large dark SUV, Vodno direction.' Risto wasn't imagining things.", clueId: "guard_logbook" }
         ]
       },
       "markov_residence": {
@@ -68,7 +68,8 @@ export const LEVELS: Record<number, Level> = {
         description: "A fortress of glass and marble in Vodno. The home of Goran Markov and his wife, Marija. Money can't hide the tension in the air here.",
         npcs: ["markov", "marija"],
         searches: [
-          { id: "s8", description: "In the study hallway, there is an open velvet-lined case labeled 'Grand Opening: Skopje East Plaza'. The silver trowel meant for the case is missing.", clueId: "missing_statuette" }
+          { id: "s8", description: "In the study hallway, an open velvet-lined case labeled 'Grand Opening: Skopje East Plaza'. The silver trowel that belongs there is gone. The velvet still holds the shape of it.", clueId: "missing_statuette" },
+          { id: "s9", description: "A second sweep of the estate. You check the garage. Behind a loose panel near the workbench, wrapped tight in a cleaning cloth — the missing silver trowel. The engraving reads 'Skopje East Plaza'. The blood on the handle has barely dried.", clueId: "murder_weapon" }
         ]
       }
     },
@@ -205,6 +206,47 @@ export const LEVELS: Record<number, Level> = {
           "m_exit": { id: "m_exit", speaker: "Goran", text: "Get out of my house.", options: [] }
         }
       },
+      "guard": {
+        id: "guard",
+        name: "Risto",
+        role: "Night Watch Guard",
+        description: "Tired eyes that have seen too much of Skopje after midnight.",
+        imageSource: "/assets/characters/guard.jpg",
+        initialNode: "g_start",
+        dialogue: {
+          "g_start": {
+            id: "g_start",
+            speaker: "Risto",
+            text: "I do twelve-hour shifts on these docks. I see a lot of things. Unless you've got a reason for me to talk, I've got rounds to do.",
+            options: [
+              { text: "We found SUV tracks near the bridge.", nextId: "g_witness", requirement: { clueId: "tire_track" } },
+              { text: "I'll let you work.", nextId: "g_exit" }
+            ]
+          },
+          "g_witness": {
+            id: "g_witness",
+            speaker: "Risto",
+            text: "Yeah. Around 3am. A woman walking fast from the bridge — dark coat, heels. Not dressed for a stroll. She was carrying something bundled under her arm. Got into a big dark SUV parked on the Kej. Drove off toward Vodno.",
+            options: [
+              { text: "Could you describe her further?", nextId: "g_desc" },
+              { text: "Did you log this?", nextId: "g_log" }
+            ]
+          },
+          "g_desc": {
+            id: "g_desc",
+            speaker: "Risto",
+            text: "Tall. Well put together, even at that hour. The kind of woman who lives behind gates. I didn't see her face clearly enough to say more.",
+            options: [{ text: "That's enough. Thank you.", nextId: "g_start" }]
+          },
+          "g_log": {
+            id: "g_log",
+            speaker: "Risto",
+            text: "It's in the logbook at the post. '02:58 — female, dark coat, dark SUV, Vodno direction.' I don't make things up.",
+            options: [{ text: "I'll check the post.", nextId: "g_start" }]
+          },
+          "g_exit": { id: "g_exit", speaker: "Risto", text: "Watch the water, detective. It carries things away.", options: [] }
+        }
+      },
       "marija": {
         id: "marija",
         name: "Marija Markova",
@@ -221,7 +263,7 @@ export const LEVELS: Record<number, Level> = {
               { text: "Explain your presence at Hotel Arka.", nextId: "mr_confront", requirement: { clueId: "hotel_card" } },
               { text: "Does this cufflink look familiar?", nextId: "mr_cufflink", requirement: { clueId: "cufflink" } },
               { text: "I found your blackmail documents.", nextId: "mr_blackmail", requirement: { clueId: "blackmail_docs" } },
-              { text: "I found the silver trowel in the river.", nextId: "mr_weapon_deny", requirement: { clueId: "murder_weapon" } },
+              { text: "We found the trowel hidden in your garage.", nextId: "mr_weapon_deny", requirement: { clueId: "murder_weapon" } },
               { text: "We found the murder weapon. Admit it.", nextId: "mr_weapon", requirement: { clueId: "fingerprints" } },
               { text: "Goodbye.", nextId: "mr_exit" }
             ]
@@ -229,8 +271,8 @@ export const LEVELS: Record<number, Level> = {
           "mr_weapon_deny": {
             id: "mr_weapon_deny",
             speaker: "Marija",
-            text: "A silver trowel? Yes, we have many. Petar probably took it himself. You have no proof I ever touched it last night.",
-            options: [{ text: "We'll see about that.", nextId: "mr_start" }]
+            text: "In our garage. (A pause — too long.) Someone put it there. Petar had a key to the estate. He could have moved it himself. You cannot place me at that bridge.",
+            options: [{ text: "A witness already did.", nextId: "mr_start" }]
           },
           "mr_confront": {
             id: "mr_confront",
@@ -256,8 +298,8 @@ export const LEVELS: Record<number, Level> = {
           "mr_missing": {
             id: "mr_missing",
             speaker: "Marija",
-            text: "Petar loved that trowel. He kept it in the study. He probably took it himself as some sort of sick souvenir.",
-            options: [{ text: "We found it. Covered in his blood.", nextId: "mr_start", requirement: { clueId: "murder_weapon" } }]
+            text: "Petar admired that trowel — it was his project, his name on it. He must have taken it the last time he was here. I didn't even notice it was gone.",
+            options: [{ text: "We found it. In your garage. Covered in his blood.", nextId: "mr_start", requirement: { clueId: "murder_weapon" } }]
           },
           "mr_weapon": {
             id: "mr_weapon",
@@ -275,7 +317,8 @@ export const LEVELS: Record<number, Level> = {
       "hotel_card": { id: "hotel_card", name: "Hotel Arka Card", imageSource: "/assets/evidence/hotel_card.jpg", description: "Found in Debar Maalo. Mentions Room 402." },
       "cufflink": { id: "cufflink", name: "S-Cufflink", imageSource: "/assets/evidence/cufflink.jpg", description: "Found in Hotel Arka. A match for the victim's missing one." },
       "blackmail_docs": { id: "blackmail_docs", name: "Blackmail Files", imageSource: "/assets/evidence/blackmail_docs.jpg", description: "Proves Stojanov was forcing Marija to spy on her husband." },
-      "murder_weapon": { id: "murder_weapon", name: "Silver Trowel", imageSource: "/assets/evidence/murder_weapon.jpg", description: "The murder weapon. Found in the Vardar. Needs lab analysis." },
+      "murder_weapon": { id: "murder_weapon", name: "Silver Trowel", imageSource: "/assets/evidence/murder_weapon.jpg", description: "Found hidden in the Markov garage, wrapped in a cleaning cloth. The blood on the handle has barely dried. Needs lab analysis." },
+      "guard_logbook": { id: "guard_logbook", name: "Guard's Logbook", imageSource: "/assets/evidence/guard_logbook.jpg", description: "Entry 02:58 — 'Female, dark coat, carrying something bundled. Large dark SUV, Vodno direction.' Written in Risto's own hand." },
       "fingerprints": { id: "fingerprints", name: "Marija's Prints", imageSource: "/assets/evidence/fingerprints.jpg", description: "Forensic match: Marija's fingerprints found on the murder weapon." },
       "forensic_report": { id: "forensic_report", name: "Cufflink Lab Report", imageSource: "/assets/evidence/forensic_report.jpg", description: "Skin cells on the cufflink provide a DNA match for Marija Markova." },
       "missing_statuette": { id: "missing_statuette", name: "Empty Display Case", imageSource: "/assets/evidence/missing_statuette.jpg", description: "The presentation case for the silver trowel is empty at the Markov house." },

@@ -319,20 +319,22 @@ const App: React.FC = () => {
   const getPartnerHint = () => {
     const clues = gameState.discoveredClues;
     const loc = gameState.currentLocationId;
-    
+
     if (loc === 'stone_bridge' && !clues.includes('receipt')) return "Search near the trash bin, partner.";
     if (loc === 'debar_maalo' && !clues.includes('hotel_card')) return "Lazo is hiding things. Search near the menus.";
     if (loc === 'hotel_arka' && (!clues.includes('cufflink') || !clues.includes('blackmail_docs'))) return "Check the safe and search under furniture.";
-    if (loc === 'vardar_galleys' && !clues.includes('murder_weapon')) return "Look into the low branches near the shore.";
+    if (loc === 'vardar_galleys' && !clues.includes('guard_logbook')) return "Check the guard post. The logbook might have something.";
     if (loc === 'markov_residence' && !clues.includes('missing_statuette')) return "Check the presentation case in the hallway.";
+    if (loc === 'markov_residence' && !clues.includes('murder_weapon')) return "She had to hide it somewhere on the estate. Keep searching.";
 
     if (!clues.includes('receipt')) return "Back to the Stone Bridge. We missed something.";
     if (!clues.includes('hotel_card')) return "Head to Debar Maalo.";
     if (!clues.includes('cufflink')) return "Arka. Room 402. The trail goes cold otherwise.";
-    if (!clues.includes('murder_weapon')) return "Check the Galleys.";
-    if (!clues.includes('fingerprints')) return "Talk to Dr. Kovac at the station lab.";
+    if (!clues.includes('blackmail_docs')) return "There's more in that hotel room. Check the safe.";
+    if (!clues.includes('guard_logbook')) return "Someone at the Galleys was on duty last night. Go ask around.";
     if (!clues.includes('missing_statuette')) return "Head to the Markov estate.";
-    if (!clues.includes('blackmail_docs')) return "Need motive from the Arka safe.";
+    if (!clues.includes('murder_weapon')) return "Search the Markov estate thoroughly. She didn't go far with it.";
+    if (!clues.includes('fingerprints')) return "Take the trowel to Dr. Kovac at the station lab.";
 
     return "We have it all. Head to the Station for the warrant.";
   };
