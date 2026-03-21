@@ -22,7 +22,7 @@
   <line x1="78" y1="48" x2="88" y2="58" stroke="url(#amberGrad)" stroke-width="3.5" stroke-linecap="round" filter="url(#shadow)"/>
   
   <!-- VN Initials in monospace style -->
-  <text x="25" y="62" font-family="'Courier New', 'JetBrains Mono', monospace" font-size="28" font-weight="bold" fill="#fbbf24" letter-spacing="-1" text-anchor="middle">VN</text>
+  <text x="25" y="62" font-family="'Courier New', 'JetBrains Mono', monospace" font-size="28" font-weight="bold" fill="#fbbf24" letter-spacing="-1" text-anchor="middle">BH</text>
   
   <!-- Small decorative line under initials -->
   <line x1="18" y1="68" x2="32" y2="68" stroke="#d97706" stroke-width="1.5"/>
