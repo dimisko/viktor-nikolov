@@ -474,11 +474,11 @@ const App: React.FC = () => {
                <div>
                   <p className="text-[8px] sm:text-[10px] text-amber-500 uppercase tracking-[0.3em] mb-1">{activeNPC.role}</p>
                   <h3 className="text-lg sm:text-2xl font-bold text-zinc-100">{activeNPC.name}</h3>
-                  <p className="text-[10px] text-zinc-500 italic mt-1">{activeNPC.description}</p>
+                  <p className="text-[10px] text-zinc-500 mt-1">{activeNPC.description}</p>
                </div>
             </div>
             <div className="py-3 sm:py-4 border-y border-zinc-800">
-              <p className="text-zinc-300 italic leading-relaxed font-serif text-sm sm:text-lg">"{currentDialogue.text}"</p>
+              <p className="text-zinc-300 leading-relaxed font-serif text-sm sm:text-lg">"{currentDialogue.text}"</p>
             </div>
             <div className="grid grid-cols-1 gap-2">
               {availableDialogueOptions.map((opt, i) => (
@@ -506,7 +506,7 @@ const App: React.FC = () => {
                   <span className="w-1 h-6 sm:w-1.5 sm:h-8 bg-amber-600" />
                   <h2 className="text-xl sm:text-3xl font-bold text-zinc-100 tracking-tight uppercase">{currentLocation.name}</h2>
                 </div>
-                <p className="text-zinc-400 leading-relaxed text-xs sm:text-sm md:text-base italic border-l border-zinc-800 pl-4 sm:pl-6">
+                <p className="text-zinc-400 leading-relaxed text-xs sm:text-sm md:text-base border-l border-zinc-800 pl-4 sm:pl-6">
                   {currentLocation.description}
                 </p>
               </div>
@@ -560,7 +560,7 @@ const App: React.FC = () => {
                       </div>
                       <div className="overflow-hidden min-w-0">
                         <h5 className="text-[10px] sm:text-[11px] font-bold text-amber-500 uppercase mb-0.5 truncate">{clue.name}</h5>
-                        <p className="text-[9px] sm:text-[10px] text-zinc-500 leading-tight italic line-clamp-2">"{clue.description}"</p>
+                        <p className="text-[9px] sm:text-[10px] text-zinc-500 leading-tight line-clamp-2">"{clue.description}"</p>
                       </div>
                     </div>
                   );
