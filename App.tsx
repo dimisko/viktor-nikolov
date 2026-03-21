@@ -108,7 +108,7 @@ const DossierHeader: React.FC<{ level: Level; migraine: number }> = ({ level, mi
           </div>
           
           <div className="shrink-0 flex flex-col items-end">
-            <p className="text-[7px] sm:text-[8px] font-bold uppercase tracking-widest text-zinc-600 mb-0.5 whitespace-nowrap">МИГРЕНА НА ВИКТОР</p>
+            <p className="text-[7px] sm:text-[8px] font-bold uppercase tracking-widest text-zinc-600 mb-0.5 whitespace-nowrap">МИГРЕНАТА НА ВИКТОР</p>
             <div className="w-16 sm:w-24 h-1.5 sm:h-2 bg-black/10 border border-black/20 overflow-hidden">
               <div 
                 className={`h-full transition-all duration-1000 ${migraine > 75 ? 'bg-red-700' : 'bg-amber-800'}`} 

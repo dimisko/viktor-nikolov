@@ -76,7 +76,7 @@ export const LEVELS: Record<number, Level> = {
     npcs: {
       "viktor": {
         id: "viktor",
-        name: "Главен Инспектор Виктор Николов",
+        name: "Главен инспектор Виктор Николов",
         role: "Партнер",
         description: "Висок, изморен, и вечно со рацете на слепоочниците.",
         imageSource: "/assets/characters/viktor.jpg",
@@ -176,7 +176,7 @@ export const LEVELS: Record<number, Level> = {
       "guard": {
         id: "guard",
         name: "Ристо",
-        role: "Ноќен Чувар",
+        role: "Ноќен чувар",
         description: "Уморни очи кои виделе премногу од Скопје по полноќ.",
         imageSource: "/assets/characters/guard.jpg",
         initialNode: "g_start",
@@ -217,7 +217,7 @@ export const LEVELS: Record<number, Level> = {
       "markov": {
         id: "markov",
         name: "Горан Марков",
-        role: "Деловен Партнер",
+        role: "Деловен партнер",
         description: "Човек кој купува градови и ги гори мостовите.",
         imageSource: "/assets/characters/markov.jpg",
         initialNode: "m_start",
