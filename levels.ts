@@ -4,329 +4,329 @@ import { Level } from './types.ts';
 export const LEVELS: Record<number, Level> = {
   1: {
     id: 1,
-    title: "Water Under the Bridge",
-    caseFile: "VICTIM: Petar Stojanov (44). FOUND: Stone Bridge @ 03:00. CAUSE: Blunt Force Trauma / Laceration. NOTES: Victim was a top city developer. No wallet found. Signs of struggle.",
+    title: "Вода под мостот",
+    caseFile: "ЖРТВА: Петар Стојанов (44). ПРОНАЈДЕН: Камен Мост @ 03:00. ПРИЧИНА: Тапа Сила / Лацерација. ЗАБЕЛЕШКИ: Жртвата беше врвен градски претприемач. Паричникот не е пронајден. Знаци на борба.",
     locations: {
       "police_station": {
         id: "police_station",
-        name: "Skopje Central Police Dept",
+        name: "МВР Скопје - Централна Станица",
         imageSource: "/assets/locations/police_station.jpg",
-        description: "The precinct smells of damp concrete and cheap tobacco. Viktor sits at his desk, head in hands. This is the only place in Skopje where the truth feels like a burden rather than a secret.",
+        description: "Станицата мириса на влажен бетон и евтин тутун. Виктор седи зад бирото, со глава во раце. Ова е единственото место во Скопје каде вистината се чувствува како товар, а не тајна.",
         npcs: ["viktor", "sandra"],
         searches: [
-          { id: "s1", description: "Viktor's desk contains an emergency stash of potent painkillers. You give him two. His breathing slows down.", clueId: "migraine_relief" }
+          { id: "s1", description: "Бирото на Виктор крие итна резерва силни аналгетици. Му даваш два. Дишењето му се смирува.", clueId: "migraine_relief" }
         ],
         isInitial: true
       },
       "stone_bridge": {
         id: "stone_bridge",
-        name: "Stone Bridge (Crime Scene)",
+        name: "Камен Мост (место на злосторство)",
         imageSource: "/assets/locations/stone_bridge.jpg",
-        description: "Police tape flutters in the wind. The Vardar river rages below. The spot where Stojanov fell is marked with a dark stain. The city's center feels cold tonight.",
+        description: "Полициска лента се вивори на ветерот. Вардар бесни долу. Местото каде паднал Стојанов е обележано со темна дамка. Центарот на градот оваа ноќ е студен.",
         npcs: [],
         searches: [
-          { id: "s2", description: "You notice tire tracks near the pedestrian zone. Heavy treads, likely a high-end SUV. No police vehicles were here yet.", clueId: "tire_track" },
-          { id: "s3", description: "Discarded near a trash bin is a damp receipt from 'Kafana Trend' in Debar Maalo, dated last night.", clueId: "receipt" }
+          { id: "s2", description: "Забележуваш траги од гуми близу пешачката зона. Тешки шари, веројатно скап теренец. Нема полициски возила овде сè уште.", clueId: "tire_track" },
+          { id: "s3", description: "Фрлена покрај канта за отпад е влажна сметка од 'Кафана Тренд' во Дебар Маало, датирана минатата ноќ.", clueId: "receipt" }
         ],
         isInitial: true
       },
       "debar_maalo": {
         id: "debar_maalo",
-        name: "Debar Maalo - Kafana Trend",
+        name: "Дебар Маало - Кафана Тренд",
         imageSource: "/assets/locations/debar_maalo.jpg",
-        description: "The bohemian quarter is quiet now. 'Trend' is empty, but the scent of grilled meat lingers. This is where Stojanov spent his final hours.",
+        description: "Боемската улица е тивка сега. 'Тренд' е празен, но мирисот на скара сè уште трае. Тука ги поминал последните часови Стојанов.",
         npcs: ["waiter"],
         searches: [
-          { id: "s4", description: "Behind a stack of menus, you find a booking card for 'Hotel Arka', Room 402, booked under the name 'Elena P.'", clueId: "hotel_card" }
+          { id: "s4", description: "Зад куп мени, наоѓаш картичка за резервација на 'Хотел Арка', Соба 402, резервирана на 'Елена П.'", clueId: "hotel_card" }
         ]
       },
       "hotel_arka": {
         id: "hotel_arka",
-        name: "Hotel Arka - Room 402",
+        name: "Хотел Арка - Соба 402",
         imageSource: "/assets/locations/hotel_arka.jpg",
-        description: "A luxury boutique hotel in the Old Bazaar. Room 402 is clean, but there's a lingering scent of expensive perfume. Stojanov clearly used this for 'private' matters.",
+        description: "Луксузен бутик хотел во Стариот Базар. Соба 402 е чиста, но има остаток на скап парфем. Стојанов очигледно ја користел за 'приватни' работи.",
         npcs: [],
         searches: [
-          { id: "s5", description: "Under the bedside table, you find a gold cufflink with an 'S' engraving. It matches the one missing from the victim's body.", clueId: "cufflink" },
-          { id: "s6", description: "Hidden in the room's safe (which was left open), you find documents showing Stojanov was blackmailing Marija Markova for files on her husband's embezzlement.", clueId: "blackmail_docs" }
+          { id: "s5", description: "Под ноќното столче наоѓаш златна копча за манжетни со гравура 'С'. Се совпаѓа со онаа што недостасува од телото на жртвата.", clueId: "cufflink" },
+          { id: "s6", description: "Скриено во сефот на собата (кој бил оставен отворен), наоѓаш документи кои покажуваат дека Стојанов ја уценувал Марија Маркова со досиеа за проневерата на нејзиниот сопруг.", clueId: "blackmail_docs" }
         ]
       },
       "vardar_galleys": {
         id: "vardar_galleys",
-        name: "Vardar River Galleys",
+        name: "Галии на реката Вардар",
         imageSource: "/assets/locations/vardar_galleys.jpg",
-        description: "The wooden tourist ships look like ghosts in the dark. A guard post sits at the end of the dock, a single lamp burning. Someone was here last night.",
+        description: "Дрвените туристички бродови изгледаат како духови во темнината. Чуварски пост стои на крајот на доксот, со единечна ламба која гори. Некој бил овде минатата ноќ.",
         npcs: ["guard"],
         searches: [
-          { id: "s7", description: "At the guard post you find a worn logbook left open on the desk. The entry for last night reads: '02:58 — Female, dark coat, carrying something bundled. Large dark SUV, Vodno direction.' Risto wasn't imagining things.", clueId: "guard_logbook" }
+          { id: "s7", description: "На чуварскиот пост наоѓаш истрошен дневник оставен отворен на бирото. Записот од минатата ноќ гласи: '02:58 — Жена, темен мантил, носи нешто завиткано. Голем темен теренец, насока Водно.' Ристо не измислувал.", clueId: "guard_logbook" }
         ]
       },
       "markov_residence": {
         id: "markov_residence",
-        name: "Markov Estate",
+        name: "Имотот на Маркови",
         imageSource: "/assets/locations/markov_residence.jpg",
-        description: "A fortress of glass and marble in Vodno. The home of Goran Markov and his wife, Marija. Money can't hide the tension in the air here.",
+        description: "Тврдина од стакло и мермер на Водно. Домот на Горан Марков и неговата сопруга Марија. Парите не можат да ја скријат напнатоста во воздухот.",
         npcs: ["markov", "marija"],
         searches: [
-          { id: "s8", description: "In the study hallway, an open velvet-lined case labeled 'Grand Opening: Skopje East Plaza'. The silver trowel that belongs there is gone. The velvet still holds the shape of it.", clueId: "missing_statuette" },
-          { id: "s9", description: "A second sweep of the estate. You check the garage. Behind a loose panel near the workbench, wrapped tight in a cleaning cloth — the missing silver trowel. The engraving reads 'Skopje East Plaza'. The blood on the handle has barely dried.", clueId: "murder_weapon" }
+          { id: "s8", description: "Во ходникот на кабинетот, отворена кутија со кадифена облога означена 'Свечено Отворање: Скопје Ист Плаза'. Сребрената мистрија која треба да биде таму ја нема. Некој ја отстранил неодамна — кадифето сè уште го чува неговиот облик.", clueId: "missing_statuette" },
+          { id: "s9", description: "Втор преглед на имотот. Ја проверуваш гаражата. Зад лабава плоча покрај работната маса, цврсто завиткана во крпа за чистење — сребрената мистрија. Гравурата гласи 'Скопје Ист Плаза'. Крвта на рачката едвај се исушила.", clueId: "murder_weapon" }
         ]
       }
     },
     npcs: {
       "viktor": {
         id: "viktor",
-        name: "Chief Inspector Viktor Nikolov",
-        role: "Partner",
-        description: "Tall, weary, and perpetually reaching for his temples.",
+        name: "Главен Инспектор Виктор Николов",
+        role: "Партнер",
+        description: "Висок, изморен, и вечно со раце на слепоочниците.",
         imageSource: "/assets/characters/viktor.jpg",
         initialNode: "v_start",
         dialogue: {
           "v_start": {
             id: "v_start",
-            speaker: "Viktor",
-            text: "My brain is vibrating. This city is too loud for justice. What have you found in the Stojanov case?",
+            speaker: "Виктор",
+            text: "Мозокот ми вибрира. Овој град е премногу бучен за правда. Што пронашол во случајот со Стојанов?",
             options: [
-              { text: "I need a fresh pair of eyes on this.", nextId: "v_help" },
-              { text: "Who are our key suspects?", nextId: "v_suspects" },
-              { text: "I'll keep digging.", nextId: "v_exit" }
+              { text: "Треба ми свеж поглед на ова.", nextId: "v_help" },
+              { text: "Кои се нашите главни осомничени?", nextId: "v_suspects" },
+              { text: "Ќе продолжам да копам.", nextId: "v_exit" }
             ]
           },
           "v_help": {
             id: "v_help",
-            speaker: "Viktor",
+            speaker: "Виктор",
             text: "[DYNAMIC_HINT]",
-            options: [{ text: "Understood.", nextId: "v_start" }]
+            options: [{ text: "Разбрано.", nextId: "v_start" }]
           },
           "v_suspects": {
             id: "v_suspects",
-            speaker: "Viktor",
-            text: "Markov is the obvious choice—business rivalry. But his wife, Marija... she's always been the silent partner. And Stojanov was a known womanizer. Women were his weakness and his leverage.",
-            options: [{ text: "I'll keep that in mind.", nextId: "v_start" }]
+            speaker: "Виктор",
+            text: "Марков е очигледниот избор — деловна ривалност. Но неговата сопруга Марија... таа секогаш била тивкиот партнер. А Стојанов бил познат по жени. Жените беа и негова слабост и негова полуга.",
+            options: [{ text: "Ќе го имам предвид тоа.", nextId: "v_start" }]
           },
-          "v_exit": { id: "v_exit", speaker: "Viktor", text: "Go. Don't let the Vardar wash away the truth before we can catch it.", options: [] }
+          "v_exit": { id: "v_exit", speaker: "Виктор", text: "Оди. Не дај Вардар да ја однесе вистината пред да можеме да ја фатиме.", options: [] }
         }
       },
       "sandra": {
         id: "sandra",
-        name: "Dr. Sandra Kovac",
-        role: "Medical Examiner",
-        description: "Clinical, sharp, and impatient.",
+        name: "Д-р Сандра Ковач",
+        role: "Судски Медицински Вештак",
+        description: "Клинична, остра и нестрплива.",
         imageSource: "/assets/characters/sandra.jpg",
         initialNode: "s_start",
         dialogue: {
           "s_start": {
             id: "s_start",
-            speaker: "Sandra",
-            text: "The lab is a mess. I'm busy. Unless you have something physical from the scene, get out of my sight.",
+            speaker: "Сандра",
+            text: "Лабораторијата е во неред. Зафатена сум. Ако немаш нешто физичко од местото на злосторство, излези.",
             options: [
-              { text: "Analyze the silver trowel.", nextId: "s_trowel", requirement: { clueId: "murder_weapon" } },
-              { text: "Check the cufflink for DNA.", nextId: "s_cufflink_lab", requirement: { clueId: "cufflink" } },
-              { text: "I'll leave you to your work.", nextId: "s_exit" }
+              { text: "Анализирај ја сребрената мистрија.", nextId: "s_trowel", requirement: { clueId: "murder_weapon" } },
+              { text: "Провери ја копчата за манжетни за ДНК.", nextId: "s_cufflink_lab", requirement: { clueId: "cufflink" } },
+              { text: "Ќе те оставам на работа.", nextId: "s_exit" }
             ]
           },
           "s_trowel": {
             id: "s_trowel",
-            speaker: "Sandra",
-            text: "Give me that. (She powders the handle). Exactly as I thought. Fingerprints. Let me cross-reference... It's a match. Marija Markova. You've got her, detective.",
-            options: [{ text: "Excellent.", nextId: "s_start", onSelect: () => { 
+            speaker: "Сандра",
+            text: "Дај ми го. (Го пудрира рачката). Токму она што го мислев. Отпечатоци. Дај да проверам... Поклопување. Марија Маркова. Ја имаш, детективе.",
+            options: [{ text: "Одлично.", nextId: "s_start", onSelect: () => {
                 window.dispatchEvent(new CustomEvent('discover_clue', { detail: 'fingerprints' }));
             }}]
           },
           "s_cufflink_lab": {
             id: "s_cufflink_lab",
-            speaker: "Sandra",
-            text: "This gold 'S' has skin cells caught in the engraving. The DNA sequencer doesn't lie. It's Marija's. She was struggling with him when he died.",
-            options: [{ text: "Good work, Sandra.", nextId: "s_start", onSelect: () => {
+            speaker: "Сандра",
+            text: "Оваа златна 'С' има клетки на кожа фатени во гравурата. ДНК секвенцерот не лаже. Нејзина е. Се борела со него кога умрел.",
+            options: [{ text: "Добра работа, Сандра.", nextId: "s_start", onSelect: () => {
                 window.dispatchEvent(new CustomEvent('discover_clue', { detail: 'forensic_report' }));
             }}]
           },
-          "s_exit": { id: "s_exit", speaker: "Sandra", text: "And close the door on your way out.", options: [] }
+          "s_exit": { id: "s_exit", speaker: "Сандра", text: "И затвори ја вратата кога ќе излезеш.", options: [] }
         }
       },
       "waiter": {
         id: "waiter",
-        name: "Lazo",
-        role: "Waiter",
-        description: "Knows too much, says too little.",
+        name: "Лазо",
+        role: "Келнер",
+        description: "Знае премногу, зборува премалку.",
         imageSource: "/assets/characters/waiter.jpg",
         initialNode: "l_start",
         dialogue: {
           "l_start": {
             id: "l_start",
-            speaker: "Lazo",
-            text: "Stojanov? He was here with a woman. Not his wife. She looked expensive and very, very angry. They left in a hurry.",
+            speaker: "Лазо",
+            text: "Стојанов? Бил тука со жена. Не неговата сопруга. Изгледала скапо и многу, многу лута. Заминале брзо.",
             options: [
-              { text: "Where were they headed?", nextId: "l_info" },
-              { text: "I have to go.", nextId: "l_exit" }
+              { text: "Каде се упатиле?", nextId: "l_info" },
+              { text: "Морам да одам.", nextId: "l_exit" }
             ]
           },
           "l_info": {
             id: "l_info",
-            speaker: "Lazo",
-            text: "She mentioned 'Room 402'. I didn't catch the hotel, but she mentioned it was 'near the Bazaar'. Arka fits the bill.",
+            speaker: "Лазо",
+            text: "Таа споменала 'Соба 402'. Не го фатив хотелот, но рекла дека е 'близу Базарот'. Арка одговара.",
             options: [
-              { text: "That's useful. Thanks.", nextId: "l_start" },
-              { text: "See you around, Lazo.", nextId: "l_exit" }
+              { text: "Корисно. Благодарам.", nextId: "l_start" },
+              { text: "Видување, Лазо.", nextId: "l_exit" }
             ]
           },
-          "l_exit": { id: "l_exit", speaker: "Lazo", text: "Watch your back, detective.", options: [] }
-        }
-      },
-      "markov": {
-        id: "markov",
-        name: "Goran Markov",
-        role: "Business Partner",
-        description: "A man who buys cities and burns bridges.",
-        imageSource: "/assets/characters/markov.jpg",
-        initialNode: "m_start",
-        dialogue: {
-          "m_start": {
-            id: "m_start",
-            speaker: "Goran",
-            text: "Stojanov was a parasite. But I didn't kill him. I'm a businessman, not a thug. Ask my wife if you want a character witness.",
-            options: [
-              { text: "Where is Marija?", nextId: "m_wife" },
-              { text: "What about the tire tracks?", nextId: "m_tires", requirement: { clueId: "tire_track" } },
-              { text: "I'll be seeing you.", nextId: "m_exit" }
-            ]
-          },
-          "m_wife": {
-            id: "m_wife",
-            speaker: "Goran",
-            text: "She's upstairs. She's been... fragile since the news. They were 'close' once.",
-            options: [{ text: "I'll go find her.", nextId: "m_start" }]
-          },
-          "m_tires": {
-            id: "m_tires",
-            speaker: "Goran",
-            text: "I have a G-Wagon. So does half of Vodno. You need more than tread depth to lock me up, detective.",
-            options: [{ text: "We'll see.", nextId: "m_start" }]
-          },
-          "m_exit": { id: "m_exit", speaker: "Goran", text: "Get out of my house.", options: [] }
+          "l_exit": { id: "l_exit", speaker: "Лазо", text: "Внимавај на себе, детективе.", options: [] }
         }
       },
       "guard": {
         id: "guard",
-        name: "Risto",
-        role: "Night Watch Guard",
-        description: "Tired eyes that have seen too much of Skopje after midnight.",
+        name: "Ристо",
+        role: "Ноќен Чувар",
+        description: "Уморни очи кои виделе премногу од Скопје по полноќ.",
         imageSource: "/assets/characters/guard.jpg",
         initialNode: "g_start",
         dialogue: {
           "g_start": {
             id: "g_start",
-            speaker: "Risto",
-            text: "I do twelve-hour shifts on these docks. I see a lot of things. Unless you've got a reason for me to talk, I've got rounds to do.",
+            speaker: "Ристо",
+            text: "Работам дванаесет-часовни смени на овие доксови. Гледам многу работи. Ако немаш причина да зборувам, имам тури да правам.",
             options: [
-              { text: "We found SUV tracks near the bridge.", nextId: "g_witness", requirement: { clueId: "tire_track" } },
-              { text: "I'll let you work.", nextId: "g_exit" }
+              { text: "Пронајдовме траги од теренец кај мостот.", nextId: "g_witness", requirement: { clueId: "tire_track" } },
+              { text: "Ќе те оставам на работа.", nextId: "g_exit" }
             ]
           },
           "g_witness": {
             id: "g_witness",
-            speaker: "Risto",
-            text: "Yeah. Around 3am. A woman walking fast from the bridge — dark coat, heels. Not dressed for a stroll. She was carrying something bundled under her arm. Got into a big dark SUV parked on the Kej. Drove off toward Vodno.",
+            speaker: "Ристо",
+            text: "Да. Околу 3 наутро. Жена која брзо оди од мостот — темен мантил, штикли. Не облечена за прошетка. Носеше нешто завиткано под рака. Се качи во голем темен теренец паркиран на Кеј. Замина кон Водно.",
             options: [
-              { text: "Could you describe her further?", nextId: "g_desc" },
-              { text: "Did you log this?", nextId: "g_log" }
+              { text: "Можеш ли да ја опишеш подетално?", nextId: "g_desc" },
+              { text: "Го запишал ли ова?", nextId: "g_log" }
             ]
           },
           "g_desc": {
             id: "g_desc",
-            speaker: "Risto",
-            text: "Tall. Well put together, even at that hour. The kind of woman who lives behind gates. I didn't see her face clearly enough to say more.",
-            options: [{ text: "That's enough. Thank you.", nextId: "g_start" }]
+            speaker: "Ристо",
+            text: "Висока. Негувана, дури и во тој час. Типот жена која живее зад порти. Не и го видов лицето доволно јасно за да кажам повеќе.",
+            options: [{ text: "Тоа е доволно. Благодарам.", nextId: "g_start" }]
           },
           "g_log": {
             id: "g_log",
-            speaker: "Risto",
-            text: "It's in the logbook at the post. '02:58 — female, dark coat, dark SUV, Vodno direction.' I don't make things up.",
-            options: [{ text: "I'll check the post.", nextId: "g_start" }]
+            speaker: "Ристо",
+            text: "Запишано е во дневникот на постот. '02:58 — жена, темен мантил, темен теренец, насока Водно.' Јас не измислувам.",
+            options: [{ text: "Ќе го проверам постот.", nextId: "g_start" }]
           },
-          "g_exit": { id: "g_exit", speaker: "Risto", text: "Watch the water, detective. It carries things away.", options: [] }
+          "g_exit": { id: "g_exit", speaker: "Ристо", text: "Внимавај на водата, детективе. Таа носи работи.", options: [] }
+        }
+      },
+      "markov": {
+        id: "markov",
+        name: "Горан Марков",
+        role: "Деловен Партнер",
+        description: "Човек кој купува градови и ги гори мостовите.",
+        imageSource: "/assets/characters/markov.jpg",
+        initialNode: "m_start",
+        dialogue: {
+          "m_start": {
+            id: "m_start",
+            speaker: "Горан",
+            text: "Стојанов беше паразит. Но јас не го убив. Јас сум деловен човек, не убиец. Прашај ја жена ми ако сакаш карактерна референца.",
+            options: [
+              { text: "Каде е Марија?", nextId: "m_wife" },
+              { text: "Што е со траги од гуми?", nextId: "m_tires", requirement: { clueId: "tire_track" } },
+              { text: "Ќе се видиме.", nextId: "m_exit" }
+            ]
+          },
+          "m_wife": {
+            id: "m_wife",
+            speaker: "Горан",
+            text: "Горе е. Беше... крта од новостите. Биле 'блиски' некогаш.",
+            options: [{ text: "Ќе одам да ја најдам.", nextId: "m_start" }]
+          },
+          "m_tires": {
+            id: "m_tires",
+            speaker: "Горан",
+            text: "Имам Г-Вагон. Исто така и половина Водно. Треба ти повеќе од длабочина на шари за да ме затвориш, детективе.",
+            options: [{ text: "Ќе видиме.", nextId: "m_start" }]
+          },
+          "m_exit": { id: "m_exit", speaker: "Горан", text: "Излези од мојата куќа.", options: [] }
         }
       },
       "marija": {
         id: "marija",
-        name: "Marija Markova",
-        role: "The Wife",
-        description: "Dressed in mourning black. Her eyes are dry and cold.",
+        name: "Марија Маркова",
+        role: "Сопругата",
+        description: "Облечена во жалосна црнина. Очите и се суви и студени.",
         imageSource: "/assets/characters/marija.jpg",
         initialNode: "mr_start",
         dialogue: {
           "mr_start": {
             id: "mr_start",
-            speaker: "Marija",
-            text: "Petar was a fool. He thought he could use me to destroy Goran. He didn't realize that in Skopje, you don't use people like me.",
+            speaker: "Марија",
+            text: "Петар беше будала. Мислеше дека може да ме искористи за да го уништи Горан. Не сфатил дека во Скопје, луѓе како мене не се користат.",
             options: [
-              { text: "Explain your presence at Hotel Arka.", nextId: "mr_confront", requirement: { clueId: "hotel_card" } },
-              { text: "Does this cufflink look familiar?", nextId: "mr_cufflink", requirement: { clueId: "cufflink" } },
-              { text: "I found your blackmail documents.", nextId: "mr_blackmail", requirement: { clueId: "blackmail_docs" } },
-              { text: "We found the trowel hidden in your garage.", nextId: "mr_weapon_deny", requirement: { clueId: "murder_weapon" } },
-              { text: "We found the murder weapon. Admit it.", nextId: "mr_weapon", requirement: { clueId: "fingerprints" } },
-              { text: "Goodbye.", nextId: "mr_exit" }
+              { text: "Објасни го присуството во Хотел Арка.", nextId: "mr_confront", requirement: { clueId: "hotel_card" } },
+              { text: "Ова копче за манжетни ти е познато?", nextId: "mr_cufflink", requirement: { clueId: "cufflink" } },
+              { text: "Ги пронајдов твоите документи за уцена.", nextId: "mr_blackmail", requirement: { clueId: "blackmail_docs" } },
+              { text: "Ја пронајдовме мистријата скриена во вашата гаража.", nextId: "mr_weapon_deny", requirement: { clueId: "murder_weapon" } },
+              { text: "Го пронајдовме оружјето за убиство. Признај.", nextId: "mr_weapon", requirement: { clueId: "fingerprints" } },
+              { text: "Збогум.", nextId: "mr_exit" }
             ]
           },
           "mr_weapon_deny": {
             id: "mr_weapon_deny",
-            speaker: "Marija",
-            text: "In our garage. (A pause — too long.) Someone put it there. Petar had a key to the estate. He could have moved it himself. You cannot place me at that bridge.",
-            options: [{ text: "A witness already did.", nextId: "mr_start" }]
+            speaker: "Марија",
+            text: "Во нашата гаража. (Пауза — предолга.) Некој го ставил таму. Петар имал клуч за имотот — можел сам да го преместил. Не можеш да ме поврзеш со тој мост.",
+            options: [{ text: "Еден сведок веќе го направи тоа.", nextId: "mr_start" }]
           },
           "mr_confront": {
             id: "mr_confront",
-            speaker: "Marija",
-            text: "We had a history. A mistake. But Petar wanted more than just my company—he wanted Goran's empire. He threatened to expose us. I went there to beg him to stop.",
-            options: [{ text: "I see.", nextId: "mr_start" }]
+            speaker: "Марија",
+            text: "Имавме историја. Грешка. Но Петар сакал повеќе од само моето друштво — ја сакал империјата на Горан. Закануваше да не разоткрие. Дојдов да го молам да запре.",
+            options: [{ text: "Разбирам.", nextId: "mr_start" }]
           },
           "mr_cufflink": {
             id: "mr_cufflink",
-            speaker: "Marija",
-            text: "A gold 'S'. Yes, he wore those every day. He was obsessed with his own name. I haven't seen that one in weeks.",
-            options: [{ text: "You're lying.", nextId: "mr_start" }]
+            speaker: "Марија",
+            text: "Златно 'С'. Да, ги носеше секој ден. Беше опседнат со сопственото ime. Не сум го видела тоа со недели.",
+            options: [{ text: "Лажеш.", nextId: "mr_start" }]
           },
           "mr_blackmail": {
             id: "mr_blackmail",
-            speaker: "Marija",
-            text: "He was forcing me to steal files. He was going to send Goran to prison and leave me with nothing. But that's not a reason to kill a man, is it?",
+            speaker: "Марија",
+            text: "Ме принудуваше да крадам досиеа. Ќе го пратеше Горан во затвор и ќе ме оставеше без ништо. Но тоа не е причина да се убие човек, нели?",
             options: [
-              { text: "It is for someone with your temper.", nextId: "mr_start" },
-              { text: "The presentation case in the hall is empty.", nextId: "mr_missing", requirement: { clueId: "missing_statuette" } }
+              { text: "За некој со твој темперамент — јест.", nextId: "mr_start" },
+              { text: "Кутијата за изложба во ходникот е празна.", nextId: "mr_missing", requirement: { clueId: "missing_statuette" } }
             ]
           },
           "mr_missing": {
             id: "mr_missing",
-            speaker: "Marija",
-            text: "Petar admired that trowel — it was his project, his name on it. He must have taken it the last time he was here. I didn't even notice it was gone.",
-            options: [{ text: "We found it. In your garage. Covered in his blood.", nextId: "mr_start", requirement: { clueId: "murder_weapon" } }]
+            speaker: "Марија",
+            text: "Петар ја обожуваше таа мистрија — тоа беше негов проект, неговото име на него. Мора да го зел последниот пат кога беше тука. Не забележав дека го нема.",
+            options: [{ text: "Го пронајдовме. Во твојата гаража. Покриено со негова крв.", nextId: "mr_start", requirement: { clueId: "murder_weapon" } }]
           },
           "mr_weapon": {
             id: "mr_weapon",
-            speaker: "Marija",
-            text: "The prints... (She collapses into a chair) It was so heavy... and sharp. He laughed at me on that bridge. He said I was just a pawn in his development plan. I didn't plan it... I just couldn't let him build his empire on my bones.",
-            options: [{ text: "It's over, Marija.", nextId: "mr_exit" }]
+            speaker: "Марија",
+            text: "Отпечатоците... (Се урива на стол) Беше толку тешко... и остро. Се смееше на тој мост. Рече дека сум само фигура во неговиот план за развој. Не го планирав... само не можев да го оставам да ја гради империјата врз моите коски.",
+            options: [{ text: "Готово е, Марија.", nextId: "mr_exit" }]
           },
-          "mr_exit": { id: "mr_exit", speaker: "Marija", text: "I have nothing more to say to the police.", options: [] }
+          "mr_exit": { id: "mr_exit", speaker: "Марија", text: "Немам повеќе ништо да кажам на полицијата.", options: [] }
         }
       }
     },
     clues: {
-      "tire_track": { id: "tire_track", name: "SUV Tire Tracks", imageSource: "/assets/evidence/tire_track.jpg", description: "Heavy treads found at the Stone Bridge. Matches Goran Markov's G-Wagon." },
-      "receipt": { id: "receipt", name: "Kafana Receipt", imageSource: "/assets/evidence/receipt.jpg", description: "A receipt from Debar Maalo. Leads to Lazo the waiter." },
-      "hotel_card": { id: "hotel_card", name: "Hotel Arka Card", imageSource: "/assets/evidence/hotel_card.jpg", description: "Found in Debar Maalo. Mentions Room 402." },
-      "cufflink": { id: "cufflink", name: "S-Cufflink", imageSource: "/assets/evidence/cufflink.jpg", description: "Found in Hotel Arka. A match for the victim's missing one." },
-      "blackmail_docs": { id: "blackmail_docs", name: "Blackmail Files", imageSource: "/assets/evidence/blackmail_docs.jpg", description: "Proves Stojanov was forcing Marija to spy on her husband." },
-      "murder_weapon": { id: "murder_weapon", name: "Silver Trowel", imageSource: "/assets/evidence/murder_weapon.jpg", description: "Found hidden in the Markov garage, wrapped in a cleaning cloth. The blood on the handle has barely dried. Needs lab analysis." },
-      "guard_logbook": { id: "guard_logbook", name: "Guard's Logbook", imageSource: "/assets/evidence/guard_logbook.jpg", description: "Entry 02:58 — 'Female, dark coat, carrying something bundled. Large dark SUV, Vodno direction.' Written in Risto's own hand." },
-      "fingerprints": { id: "fingerprints", name: "Marija's Prints", imageSource: "/assets/evidence/fingerprints.jpg", description: "Forensic match: Marija's fingerprints found on the murder weapon." },
-      "forensic_report": { id: "forensic_report", name: "Cufflink Lab Report", imageSource: "/assets/evidence/forensic_report.jpg", description: "Skin cells on the cufflink provide a DNA match for Marija Markova." },
-      "missing_statuette": { id: "missing_statuette", name: "Empty Display Case", imageSource: "/assets/evidence/missing_statuette.jpg", description: "The presentation case for the silver trowel is empty at the Markov house." },
-      "migraine_relief": { id: "migraine_relief", name: "Painkillers", imageSource: "/assets/evidence/migraine_relief.jpg", description: "Viktor's meds. Essential for keeping him focused." }
+      "tire_track": { id: "tire_track", name: "Траги од гуми на теренец", imageSource: "/assets/evidence/tire_track.jpg", description: "Тешки шари пронајдени на Камен Мост. Се совпаѓаат со Г-Вагонот на Горан Марков." },
+      "receipt": { id: "receipt", name: "Сметка од кафана", imageSource: "/assets/evidence/receipt.jpg", description: "Сметка од Дебар Маало. Води до Лазо, келнерот." },
+      "hotel_card": { id: "hotel_card", name: "Картичка за хотел Арка", imageSource: "/assets/evidence/hotel_card.jpg", description: "Пронајдена во Дебар Маало. Споменува Соба 402." },
+      "cufflink": { id: "cufflink", name: "Копча за манжетни 'С'", imageSource: "/assets/evidence/cufflink.jpg", description: "Пронајдена во Хотел Арка. Се совпаѓа со онаа што недостасува на жртвата." },
+      "blackmail_docs": { id: "blackmail_docs", name: "Досиеа за уцена", imageSource: "/assets/evidence/blackmail_docs.jpg", description: "Докажува дека Стојанов ја принудувал Марија да шпионира против нејзиниот сопруг." },
+      "murder_weapon": { id: "murder_weapon", name: "Сребрена мистрија", imageSource: "/assets/evidence/murder_weapon.jpg", description: "Пронајдено скриено во гаражата на Маркови, завиткано во крпа за чистење. Крвта на рачката едвај се исушила. Потребна е лабораториска анализа." },
+      "fingerprints": { id: "fingerprints", name: "Отпечатоци на Марија", imageSource: "/assets/evidence/fingerprints.jpg", description: "Форензичко поклопување: отпечатоците на Марија Маркова пронајдени на оружјето за убиство." },
+      "forensic_report": { id: "forensic_report", name: "Лабораториски извештај", imageSource: "/assets/evidence/forensic_report.jpg", description: "Клетки на кожа на копчата за манжетни обезбедуваат ДНК поклопување за Марија Маркова." },
+      "missing_statuette": { id: "missing_statuette", name: "Празна кутија за изложба", imageSource: "/assets/evidence/missing_statuette.jpg", description: "Кутијата за изложба на сребрена мистрија е празна во куќата на Маркови." },
+      "guard_logbook": { id: "guard_logbook", name: "Дневник на чуварот", imageSource: "/assets/evidence/guard_logbook.jpg", description: "Запис од 02:58: 'Жена, темен мантил, голем темен теренец, насока Водно.' Напишано со рака на Ристо." },
+      "migraine_relief": { id: "migraine_relief", name: "Аналгетици", imageSource: "/assets/evidence/migraine_relief.jpg", description: "Лековите на Виктор. Неопходни за да остане фокусиран." }
     },
     solution: {
       killerId: "marija",
-      motive: "Personal Vendetta",
+      motive: "Лична освета",
       evidenceId: "murder_weapon"
     }
   }

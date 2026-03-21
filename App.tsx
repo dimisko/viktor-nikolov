@@ -100,15 +100,15 @@ const DossierHeader: React.FC<{ level: Level; migraine: number }> = ({ level, mi
             </div>
             <div className="space-y-1 min-w-0">
               <div className="flex items-center gap-2 flex-wrap">
-                <span className="px-1.5 py-0.5 bg-red-800 text-white text-[8px] font-bold shrink-0">TOP SECRET</span>
+                <span className="px-1.5 py-0.5 bg-red-800 text-white text-[8px] font-bold shrink-0">СТРОГО ДОВЕРЛИВО</span>
                 <h1 className="text-sm md:text-xl font-bold tracking-tighter uppercase truncate leading-tight">{level.title}</h1>
               </div>
-              <p className="text-[9px] text-zinc-600 font-bold uppercase tracking-widest">ASSIGNED: INSPECTOR VIKTOR NIKOLOV</p>
+              <p className="text-[9px] text-zinc-600 font-bold uppercase tracking-widest">ДОДЕЛЕНО: ИНСПЕКТОР ВИКТОР НИКОЛОВ</p>
             </div>
           </div>
           
           <div className="shrink-0 flex flex-col items-end">
-            <p className="text-[7px] sm:text-[8px] font-bold uppercase tracking-widest text-zinc-600 mb-0.5 whitespace-nowrap">VIKTOR’S MIGRAINE</p>
+            <p className="text-[7px] sm:text-[8px] font-bold uppercase tracking-widest text-zinc-600 mb-0.5 whitespace-nowrap">МИГРЕНА НА ВИКТОР</p>
             <div className="w-16 sm:w-24 h-1.5 sm:h-2 bg-black/10 border border-black/20 overflow-hidden">
               <div 
                 className={`h-full transition-all duration-1000 ${migraine > 75 ? 'bg-red-700' : 'bg-amber-800'}`} 
@@ -133,8 +133,8 @@ const IntroScreen: React.FC<{ onStart: () => void }> = ({ onStart }) => (
     <div className="max-w-2xl w-full border border-zinc-800 p-6 sm:p-8 bg-zinc-900/30 space-y-6 my-auto">
       <div className="flex justify-between items-start border-b border-zinc-800 pb-4">
         <div>
-          <h2 className="text-xl sm:text-2xl font-bold text-zinc-100 tracking-tighter">CONFIDENTIAL</h2>
-          <p className="text-[8px] sm:text-[10px] text-amber-600 uppercase tracking-widest">Dept. Serious Crimes</p>
+          <h2 className="text-xl sm:text-2xl font-bold text-zinc-100 tracking-tighter">ДОВЕРЛИВО</h2>
+          <p className="text-[8px] sm:text-[10px] text-amber-600 uppercase tracking-widest">Одд. Тешки Кривични Дела</p>
         </div>
         <span className="text-zinc-600 font-mono text-[10px] sm:text-xs">
           LOG_{String(new Date().getMonth() + 1).padStart(2, '0')}-{new Date().getFullYear()}
@@ -142,50 +142,50 @@ const IntroScreen: React.FC<{ onStart: () => void }> = ({ onStart }) => (
       </div>
       
       <div className="space-y-4 font-mono text-[10px] sm:text-xs text-zinc-400 leading-relaxed max-h-[50vh] overflow-y-auto pr-2">
-        <p><span className="text-zinc-100 font-bold uppercase">PROLOGUE:</span> You are a Junior Detective transferred from Bitola. Skopje is meaner and smells of old cigarette ash.</p>
-        <p>You've been assigned to <span className="text-zinc-100">Chief Inspector Viktor Nikolov</span>. He's a legend, but corruption has given him a permanent, debilitating migraine.</p>
-        <p><span className="text-red-600 font-bold uppercase">THE CASE:</span> Petar Stojanov, a developer, was found dead at 3:00 AM on the Stone Bridge. Left for the Vardar to claim. No witnesses.</p>
-        <p>Viktor is waiting. Keep your head down. <span className="text-zinc-100 font-bold uppercase underline">IMPORTANT:</span> If you are stuck or need guidance on evidence, return to the station and <span className="text-zinc-100 font-bold">TALK TO VIKTOR</span> directly. He knows how this city breathes.</p>
+        <p><span className="text-zinc-100 font-bold uppercase">ПРОЛОГОТ:</span> Ти си Млад Детектив префрлен од Битола. Скопје е понасилно и мириса на стар пепел од цигари.</p>
+        <p>Доделен си на <span className="text-zinc-100">Главниот Инспектор Виктор Николов</span>. Тој е легенда, но корупцијата му дала трајна, оневозможувачка мигрена.</p>
+        <p><span className="text-red-600 font-bold uppercase">СЛУЧАЈОТ:</span> Петар Стојанов, претприемач, бил пронајден мртов во 3:00 наутро на Камен Мост. Оставен да го земе Вардар. Без сведоци.</p>
+        <p>Виктор чека. Пази глава. <span className="text-zinc-100 font-bold uppercase underline">ВАЖНО:</span> Ако си заглавен или ти треба насока за докази, врати се во станицата и <span className="text-zinc-100 font-bold">РАЗГОВАРАЈ СО ВИКТОР</span> директно. Тој знае како дише овој град.</p>
       </div>
 
       <div className="pt-4">
-        <Button onClick={onStart} variant="primary" className="w-full py-4 text-xs sm:text-sm font-bold tracking-[0.2em]">INITIALIZE INVESTIGATION</Button>
+        <Button onClick={onStart} variant="primary" className="w-full py-4 text-xs sm:text-sm font-bold tracking-[0.2em]">ЗАПОЧНИ ИСТРАГА</Button>
       </div>
     </div>
   </div>
 );
 
 const WALKMAN_TRACKS = [
-  { title: "I was made for lovin' you - KISS", context: "Viktor taps his fingers on the steering wheel. 'A classic for a messy city.'" },
-  { title: "Can't Fight the Moonlight - LeAnn Rimes", context: "He looks at the Stone Bridge. 'Some things you just can't fight, partner.'" },
-  { title: "In the army now - Status Quo", context: "Reminds him of his mandatory service in the 90s. Heavy air, heavy boots." },
-  { title: "Va Va Voom - Nicki Minaj", context: "He suppresses a rare smile. 'The kids in the precinct play this. It's... catchy.'" },
-  { title: "Running up that hill - Placebo", context: "Viktor sighs. 'Always climbing, never reaching the top.'" },
-  { title: "It's no good - Depeche Mode", context: "The synths help him block out the buzzing in his skull." },
-  { title: "A hard day's night - Les Crossaders", context: "Every night in Skopje is a hard day's night.'" },
-  { title: "Ante Up - M.O.P.", context: "The beat drops. Viktor's eyes sharpen. 'Time to lean on some suspects.'" },
-  { title: "Skandal - Toni Zen", context: "Local Skopje vibes. 'Toni knows this city better than most of us.'" },
-  { title: "The Temple of The King - Rainbow", context: "He closes his eyes. This one always takes the edge off the pain." },
-  { title: "The best is yet to come - Sinatra", context: "Pure irony. In this department, the best is usually a closed file." },
-  { title: "Mother - Danzig", context: "He thinks about the mothers who never got justice. It fuels him." },
-  { title: "Say you will - Foreigner", context: "Viktor hums along. '80s rock... the only thing that doesn't change.'" },
-  { title: "Safari song - Greta van Fleet", context: "Energy. Raw power. He feels the migraine receding slightly." },
-  { title: "Lust for life - Iggy Pop", context: "Despite the corruption, Viktor still has a bit of this left." },
-  { title: "Ace of Spades - Motorhead", context: "He turns the volume up. 'Lemmy understood the gamble of this job.'" },
-  { title: "Brave new world - Iron maiden", context: "He looks at the new glass buildings. 'Nothing's brave about it, Steve.'" },
-  { title: "My one and only love - John Coltrane", context: "The sax calms the storm in his head. Perfection." },
-  { title: "Take a look around - Limp Bizkit", context: "The mission: impossible theme for a mission that feels impossible." },
-  { title: "Back in black - AC/DC", context: "The ultimate return. 'Back to work,' he mutters." },
-  { title: "Ain't talkin' bout love - Van Halen", context: "Viktor remembers his first leather jacket. It's in a box somewhere." },
-  { title: "In Walks Barbarella - Clutch", context: "Groovy. Weird. Just like a night in Debar Maalo." },
-  { title: "O Children - Nick Cave", context: "The darkness of the track matches the depth of the Vardar." },
-  { title: "Bella Stella - Highland", context: "A bit of opera to class up the crime scene." },
-  { title: "Caught out in the rain - Beth Hart", context: "Every detective in Skopje has been here. Literally and figuratively." },
-  { title: "Sound of da police - KRS-One", context: "He chuckles. 'Woop-woop... that's us, partner.'" },
-  { title: "Bella Ciao", context: "An anthem for those who keep fighting the good fight." },
-  { title: "Movin' On - Tom Meighan", context: "Viktor checks his watch. We have to keep moving." },
-  { title: "Hells Bells - AC/DC", context: "The tolling bell. It's either for the victim or the killer." },
-  { title: "Don't Stop Belivin' - Journey", context: "'Believe in the evidence,' Viktor says. 'The rest is just noise.'" }
+  { title: "I was made for lovin' you - KISS", context: "Виктор тапка со прстите на воланот. 'Класика за еден нереден град.'" },
+  { title: "Can't Fight the Moonlight - LeAnn Rimes", context: "Гледа кон Камен Мост. 'Некои работи не можеш да ги победиш, партнер.'" },
+  { title: "In the army now - Status Quo", context: "Му потсетува на задолжителната служба во 90-тите. Тежок воздух, тешки чизми." },
+  { title: "Va Va Voom - Nicki Minaj", context: "Потиснува ретка насмевка. 'Младите во станицата го пуштаат ова. Е... заразно е.'" },
+  { title: "Running up that hill - Placebo", context: "Виктор воздивнува. 'Секогаш се качуваш, никогаш не стигнуваш до врвот.'" },
+  { title: "It's no good - Depeche Mode", context: "Нотите му помагаат да го блокира ѕвонењето во черепот." },
+  { title: "A hard day's night - Les Crossaders", context: "Секоја ноќ во Скопје е тежок работен ден." },
+  { title: "Ante Up - M.O.P.", context: "Битот паѓа. Очите на Виктор се заоструваат. 'Време е да притиснеме на осомничените.'" },
+  { title: "Skandal - Toni Zen", context: "Локален скопски вајб. 'Тони го познава овој град подобро од повеќето од нас.'" },
+  { title: "The Temple of The King - Rainbow", context: "Ги затвора очите. Овој секогаш го намалува болот." },
+  { title: "The best is yet to come - Sinatra", context: "Чиста иронија. Во овој оддел, најдоброто обично е затворено досие." },
+  { title: "Mother - Danzig", context: "Мисли за мајките кои никогаш не добиле правда. Тоа го поттикнува." },
+  { title: "Say you will - Foreigner", context: "Виктор мрмори по мелодијата. 'Рок од 80-тите... единственото нешто кое не се менува.'" },
+  { title: "Safari song - Greta van Fleet", context: "Енергија. Сурова сила. Ја чувствува мигрената дека малку се повлекува." },
+  { title: "Lust for life - Iggy Pop", context: "И покрај корупцијата, Виктор сè уште има малку од ова останато." },
+  { title: "Ace of Spades - Motorhead", context: "Го засилува звукот. 'Лими го разбираше коцкањето во овој тип на професија.'" },
+  { title: "Brave new world - Iron maiden", context: "Гледа кон новите стаклени згради. 'Нема ништо храбро во тоа, Стив.'" },
+  { title: "My one and only love - John Coltrane", context: "Саксофонот ја смирува бурата во главата. Совршенство." },
+  { title: "Take a look around - Limp Bizkit", context: "Темата на Невозможна Мисија за мисија која изгледа невозможна." },
+  { title: "Back in black - AC/DC", context: "Последното враќање. 'Назад на работа,' мрмори тој." },
+  { title: "Ain't talkin' bout love - Van Halen", context: "Виктор се сеќава на неговата прва кожна јакна. Некаде е во кутија." },
+  { title: "In Walks Barbarella - Clutch", context: "Грув. Чудно. Исто како ноќта во Дебар Маало." },
+  { title: "O Children - Nick Cave", context: "Темнината на нумерата одговара на длабочината на Вардар." },
+  { title: "Bella Stella - Highland", context: "Малку опера за да се облагороди местото на злосторство." },
+  { title: "Caught out in the rain - Beth Hart", context: "Секој детектив во Скопје бил тука. Буквално и преносно." },
+  { title: "Sound of da police - KRS-One", context: "Се смее тивко. 'Вуп-вуп... тоа сме ние, партнер.'" },
+  { title: "Bella Ciao", context: "Химна за оние кои продолжуваат да се борат за доброто." },
+  { title: "Movin' On - Tom Meighan", context: "Виктор го проверува часовникот. Мораме да продолжуваме да се движиме." },
+  { title: "Hells Bells - AC/DC", context: "Ѕвоното што бие. Или за жртвата или за убиецот." },
+  { title: "Don't Stop Belivin' - Journey", context: "'Верувај во доказите,' вели Виктор. 'Останатото е само шум.'" }
 ];
 
 // --- PWA INSTALL PROMPT ---
@@ -194,11 +194,11 @@ const PWAInstallPrompt: React.FC<{ onInstall: () => void; onNo: () => void }> = 
   <div className="fixed inset-0 bg-black/80 z-[110] flex items-center justify-center p-6 backdrop-blur-sm animate-in fade-in duration-300">
     <div className="w-full max-w-xs border border-zinc-800 bg-[#0a0a0a] p-6 space-y-5 animate-in zoom-in-95 duration-200 shadow-2xl">
       <p className="text-xs text-zinc-300 font-mono leading-relaxed">
-        Install this app on your phone for offline access?
+        Инсталирај ја апликацијата на телефонот?
       </p>
       <div className="flex gap-3">
-        <Button onClick={onInstall} variant="primary" className="flex-1 py-3">YES</Button>
-        <Button onClick={onNo} variant="ghost" className="flex-1 py-3">NO</Button>
+        <Button onClick={onInstall} variant="primary" className="flex-1 py-3">ДА</Button>
+        <Button onClick={onNo} variant="ghost" className="flex-1 py-3">НЕ</Button>
       </div>
     </div>
   </div>
@@ -281,7 +281,7 @@ const App: React.FC = () => {
           ...prev,
           discoveredClues: [...prev.discoveredClues, clueId]
         }));
-        setFlavorText(`NEW EVIDENCE: ${currentLevel.clues[clueId]?.name || clueId}`);
+        setFlavorText(`НОВ ДОКАЗ: ${currentLevel.clues[clueId]?.name || clueId}`);
         setTimeout(() => setFlavorText(null), 3000);
       }
     };
@@ -301,7 +301,7 @@ const App: React.FC = () => {
 
     if (newUnlocked.length !== gameState.unlockedLocations.length) {
       setGameState(prev => ({ ...prev, unlockedLocations: newUnlocked }));
-      setFlavorText("MAP UPDATED: NEW LOCATION IDENTIFIED");
+      setFlavorText("КАРТАТА АЖУРИРАНА: НОВА ЛОКАЦИЈА ИДЕНТИФИКУВАНА");
       setTimeout(() => setFlavorText(null), 3000);
     }
   }, [gameState.discoveredClues]);
@@ -320,23 +320,23 @@ const App: React.FC = () => {
     const clues = gameState.discoveredClues;
     const loc = gameState.currentLocationId;
 
-    if (loc === 'stone_bridge' && !clues.includes('receipt')) return "Search near the trash bin, partner.";
-    if (loc === 'debar_maalo' && !clues.includes('hotel_card')) return "Lazo is hiding things. Search near the menus.";
-    if (loc === 'hotel_arka' && (!clues.includes('cufflink') || !clues.includes('blackmail_docs'))) return "Check the safe and search under furniture.";
-    if (loc === 'vardar_galleys' && !clues.includes('guard_logbook')) return "Check the guard post. The logbook might have something.";
-    if (loc === 'markov_residence' && !clues.includes('missing_statuette')) return "Check the presentation case in the hallway.";
-    if (loc === 'markov_residence' && !clues.includes('murder_weapon')) return "She had to hide it somewhere on the estate. Keep searching.";
+    if (loc === 'stone_bridge' && !clues.includes('receipt')) return "Пребарај кај контејнерот за отпад, партнер.";
+    if (loc === 'debar_maalo' && !clues.includes('hotel_card')) return "Лазо крие нешто. Пребарај кај менијата.";
+    if (loc === 'hotel_arka' && (!clues.includes('cufflink') || !clues.includes('blackmail_docs'))) return "Провери го сефот и пребарај под мебелот.";
+    if (loc === 'vardar_galleys' && !clues.includes('guard_logbook')) return "Провери го чуварскиот пост. Дневникот може да има нешто.";
+    if (loc === 'markov_residence' && !clues.includes('missing_statuette')) return "Провери ја кутијата за изложба во ходникот.";
+    if (loc === 'markov_residence' && !clues.includes('murder_weapon')) return "Мора да го скрие некаде на имотот. Продолжи да пребаруваш.";
 
-    if (!clues.includes('receipt')) return "Back to the Stone Bridge. We missed something.";
-    if (!clues.includes('hotel_card')) return "Head to Debar Maalo.";
-    if (!clues.includes('cufflink')) return "Arka. Room 402. The trail goes cold otherwise.";
-    if (!clues.includes('blackmail_docs')) return "There's more in that hotel room. Check the safe.";
-    if (!clues.includes('guard_logbook')) return "Someone at the Galleys was on duty last night. Go ask around.";
-    if (!clues.includes('missing_statuette')) return "Head to the Markov estate.";
-    if (!clues.includes('murder_weapon')) return "Search the Markov estate thoroughly. She didn't go far with it.";
-    if (!clues.includes('fingerprints')) return "Take the trowel to Dr. Kovac at the station lab.";
+    if (!clues.includes('receipt')) return "Назад на Камен Мост. Пропуштивме нешто.";
+    if (!clues.includes('hotel_card')) return "Оди во Дебар Маало.";
+    if (!clues.includes('cufflink')) return "Арка. Соба 402. Трагата поинаку се лади.";
+    if (!clues.includes('blackmail_docs')) return "Има уште нешто во таа хотелска соба. Провери го сефот.";
+    if (!clues.includes('guard_logbook')) return "Некој на галиите бил на дежурство минатата ноќ. Оди да прашаш.";
+    if (!clues.includes('missing_statuette')) return "Оди до имотот на Маркови.";
+    if (!clues.includes('murder_weapon')) return "Темелно пребарај го имотот на Маркови. Не отишла далеку со него.";
+    if (!clues.includes('fingerprints')) return "Однеси ја мистријата кај Д-р Ковач во станицата.";
 
-    return "We have it all. Head to the Station for the warrant.";
+    return "Го имаме сè. Оди во Станицата за налогот.";
   };
 
   const currentStatus = useMemo(() => getPartnerHint(), [gameState.discoveredClues, gameState.currentLocationId]);
@@ -356,7 +356,7 @@ const App: React.FC = () => {
       }));
       setFlavorText(result.description);
     } else {
-      setFlavorText("Sweep complete. No new evidence.");
+      setFlavorText("Пребарувањето завршено. Нема нови докази.");
     }
     setTimeout(() => setFlavorText(null), 4000);
   };
@@ -372,7 +372,7 @@ const App: React.FC = () => {
       setCurrentDialogue({
         id: "v_incapacitated",
         speaker: "Viktor",
-        text: "Viktor is clutching his head, his eyes squeezed shut. He looks at you for a split second, winces, and looks away. The pressure in his skull is too great; he cannot even focus on your words.",
+        text: "Виктор ја стега главата, очите цврсто затворени. Те погледнува само за миг, се свиткува, и го свртува погледот. Притисокот во черепот е преголем; не може да се фокусира ни на твоите зборови.",
         options: []
       });
     } else {
@@ -422,7 +422,7 @@ const App: React.FC = () => {
       migraineLevel: Math.max(0, prev.migraineLevel - 5)
     }));
 
-    setFlavorText(`📻 NOW PLAYING: ${track.title} -- ${track.context} (MIGRAINE REDUCED)`);
+    setFlavorText(`📻 СЕ ПУШТА: ${track.title} -- ${track.context} (МИГРЕНАТА НАМАЛЕНА)`);
     setTimeout(() => setFlavorText(null), 6000);
   };
 
@@ -440,15 +440,15 @@ const App: React.FC = () => {
       <div className="min-h-screen bg-black flex items-center justify-center p-4 sm:p-6 font-mono text-zinc-100 grainy overflow-y-auto">
         <div className="max-w-xl w-full border-2 border-zinc-800 p-6 sm:p-8 text-center space-y-6 bg-zinc-900/40 shadow-[0_0_50px_rgba(0,0,0,1)] my-auto">
           <h2 className={`text-3xl sm:text-5xl font-bold tracking-tighter ${gameState.gameWon ? 'text-green-500' : 'text-red-500'}`}>
-            {gameState.gameWon ? "CASE CLOSED" : "CASE COLD"}
+            {gameState.gameWon ? "СЛУЧАЈ РЕШЕН" : "СЛУЧАЈОТ ОЛАДИ"}
           </h2>
           <div className="h-0.5 bg-zinc-800 w-full" />
           <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
             {gameState.gameWon 
-              ? `Marija Markova was arrested. The silver trowel was the smoking gun. Viktor looks at the city lights: 'Nice work, partner. Coffee is on me.'`
-              : "The warrant was rejected. The Markovs fled to Greece. Viktor handed in his badge. Skopje remains silent."}
+              ? `Марија Маркова беше приведена. Сребрената мистрија беше клучниот доказ. Виктор гледа кон светлините на градот: 'Добра работа, партнер. Кафето е од мене.'`
+              : "Налогот беше одбиен. Маркови побегнаа во Грција. Виктор ја предаде значката. Скопје останува тивко."}
           </p>
-          <Button onClick={resetGame} variant="primary" className="w-full sm:w-auto mx-auto py-4">REOPEN DOSSIER</Button>
+          <Button onClick={resetGame} variant="primary" className="w-full sm:w-auto mx-auto py-4">ПОВТОРНО ОТВОРИ ДОСИЕ</Button>
         </div>
       </div>
     );
@@ -487,7 +487,7 @@ const App: React.FC = () => {
                 </Button>
               ))}
               {availableDialogueOptions.length === 0 && (
-                <Button variant="success" onClick={() => { setActiveNPC(null); setCurrentDialogue(null); }}>END CONVERSATION</Button>
+                <Button variant="success" onClick={() => { setActiveNPC(null); setCurrentDialogue(null); }}>ЗАВРШИ РАЗГОВОР</Button>
               )}
             </div>
           </div>
@@ -515,11 +515,11 @@ const App: React.FC = () => {
             <section className="flex flex-col sm:flex-row gap-3">
               <Button onClick={handleSearch} variant="primary" className="flex-1 py-4 text-xs font-bold border-2">
                 <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                SEARCH AREA
+                ПРЕБАРАЈ ОБЛАСТ
               </Button>
               {currentLocation.npcs.map(nId => {
                 const npc = currentLevel.npcs[nId];
-                let label = nId === 'viktor' ? "TALK TO VIKTOR" : nId === 'sandra' ? "TALK TO DR. KOVAC" : `INTERROGATE ${npc.name.split(' ')[0]}`;
+                let label = nId === 'viktor' ? "РАЗГОВАРАЈ СО ВИКТОР" : nId === 'sandra' ? "РАЗГОВАРАЈ СО Д-Р КОВАЧ" : `ИСПРАШАЈ ${npc.name.split(' ')[0]}`;
                 return (
                   <Button key={nId} onClick={() => startDialogue(nId)} variant="dossier" className="flex-1 py-4 text-xs font-bold border-2">
                     {label}
@@ -529,7 +529,7 @@ const App: React.FC = () => {
             </section>
 
             <section className="space-y-3 sm:space-y-4 border-t border-zinc-900 pt-6">
-              <h4 className="text-[9px] sm:text-[10px] text-zinc-600 uppercase tracking-[0.2em] font-bold">Investigate Locations</h4>
+              <h4 className="text-[9px] sm:text-[10px] text-zinc-600 uppercase tracking-[0.2em] font-bold">Истражи локации</h4>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                 {gameState.unlockedLocations.map(locId => (
                   <Button 
@@ -549,7 +549,7 @@ const App: React.FC = () => {
             </section>
 
             <section className="border-t border-zinc-900 pt-6 sm:pt-8">
-              <h4 className="text-[9px] sm:text-[10px] text-zinc-600 uppercase tracking-[0.2em] font-bold mb-4">Evidence Locker</h4>
+              <h4 className="text-[9px] sm:text-[10px] text-zinc-600 uppercase tracking-[0.2em] font-bold mb-4">Трезор за докази</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {gameState.discoveredClues.map(cId => {
                   const clue = currentLevel.clues[cId];
@@ -566,7 +566,7 @@ const App: React.FC = () => {
                   );
                 })}
                 {gameState.discoveredClues.length === 0 && (
-                  <div className="col-span-1 sm:col-span-2 text-center py-6 sm:py-8 border border-dashed border-zinc-800 opacity-20 text-[8px] sm:text-[10px] uppercase tracking-widest">No Evidence Collected</div>
+                  <div className="col-span-1 sm:col-span-2 text-center py-6 sm:py-8 border border-dashed border-zinc-800 opacity-20 text-[8px] sm:text-[10px] uppercase tracking-widest">Нема собрани докази</div>
                 )}
               </div>
             </section>
@@ -587,7 +587,7 @@ const App: React.FC = () => {
         
         {gameState.currentLocationId === 'police_station' && !activeNPC && (
           <Button variant="danger" className="px-4 sm:px-8 font-bold border-2 animate-pulse text-[10px] sm:text-xs" onClick={() => setIsAccusing(true)}>
-            FILE WARRANT
+            ПОДНЕСИ НАЛОГ
           </Button>
         )}
       </footer>
@@ -600,8 +600,8 @@ const App: React.FC = () => {
         <div className="fixed inset-0 bg-black/98 z-[100] flex items-center justify-center p-4 backdrop-blur-md overflow-y-auto">
           <div className="max-w-xl w-full border-2 border-red-900/50 bg-[#050505] p-6 sm:p-8 space-y-6 sm:space-y-8 animate-in zoom-in-95 duration-300 shadow-2xl my-auto">
             <div className="text-center space-y-2">
-              <h2 className="text-xl sm:text-3xl font-bold text-red-600 uppercase tracking-tighter">FINAL ARREST DOSSIER</h2>
-              <p className="text-[8px] sm:text-[10px] text-zinc-500 uppercase font-mono tracking-widest">Select ID, Motive, and Weapon.</p>
+              <h2 className="text-xl sm:text-3xl font-bold text-red-600 uppercase tracking-tighter">ФИНАЛНО ДОСИЕ ЗА АПСЕЊЕ</h2>
+              <p className="text-[8px] sm:text-[10px] text-zinc-500 uppercase font-mono tracking-widest">Избери осомничен, мотив и оружје.</p>
             </div>
             
             <AccusationForm 
@@ -629,45 +629,45 @@ const AccusationForm: React.FC<{
   const [motive, setMotive] = useState("");
   const [evidence, setEvidence] = useState("");
 
-  const motives = ["Personal Vendetta", "Business Rivalry", "Crimes of Passion", "Accidental Death"];
+  const motives = ["Лична освета", "Деловна ривалност", "Злосторство од страст", "Случајна смрт"];
 
   return (
     <div className="space-y-4 sm:space-y-6 font-mono">
       <div className="space-y-1 sm:space-y-2">
-        <label className="text-[8px] sm:text-[10px] text-zinc-500 uppercase font-bold">SUSPECT_ID</label>
+        <label className="text-[8px] sm:text-[10px] text-zinc-500 uppercase font-bold">ID НА ОСОМНИЧЕН</label>
         <select value={killer} onChange={e => setKiller(e.target.value)} className="w-full bg-zinc-900 border border-zinc-800 text-zinc-100 p-2 sm:p-3 text-[10px] sm:text-xs uppercase outline-none focus:border-red-600 appearance-none rounded-none">
-          <option value="">-- SELECT --</option>
-          {discoveredSuspects.filter(id => id !== 'viktor' && id !== 'sandra' && id !== 'waiter').map(id => (
+          <option value="">-- ИЗБЕРИ --</option>
+          {discoveredSuspects.filter(id => id !== 'viktor' && id !== 'sandra' && id !== 'waiter' && id !== 'guard').map(id => (
             <option key={id} value={id}>{level.npcs[id].name}</option>
           ))}
         </select>
       </div>
 
       <div className="space-y-1 sm:space-y-2">
-        <label className="text-[8px] sm:text-[10px] text-zinc-500 uppercase font-bold">MOTIVE</label>
+        <label className="text-[8px] sm:text-[10px] text-zinc-500 uppercase font-bold">МОТИВ</label>
         <select value={motive} onChange={e => setMotive(e.target.value)} className="w-full bg-zinc-900 border border-zinc-800 text-zinc-100 p-2 sm:p-3 text-[10px] sm:text-xs uppercase outline-none focus:border-red-600 appearance-none rounded-none">
-          <option value="">-- SELECT --</option>
+          <option value="">-- ИЗБЕРИ --</option>
           {motives.map(m => <option key={m} value={m}>{m}</option>)}
         </select>
       </div>
 
       <div className="space-y-1 sm:space-y-2">
-        <label className="text-[8px] sm:text-[10px] text-zinc-500 uppercase font-bold">EXHIBIT A (WEAPON)</label>
+        <label className="text-[8px] sm:text-[10px] text-zinc-500 uppercase font-bold">ДОКАЗ (ОРУЖЈЕ)</label>
         <select value={evidence} onChange={e => setEvidence(e.target.value)} className="w-full bg-zinc-900 border border-zinc-800 text-zinc-100 p-2 sm:p-3 text-[10px] sm:text-xs uppercase outline-none focus:border-red-600 appearance-none rounded-none">
-          <option value="">-- SELECT --</option>
+          <option value="">-- ИЗБЕРИ --</option>
           {clues.map(cId => <option key={cId} value={cId}>{level.clues[cId].name}</option>)}
         </select>
       </div>
 
       <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 pt-2">
-        <Button variant="ghost" onClick={onClose} className="w-full py-3">CANCEL</Button>
+        <Button variant="ghost" onClick={onClose} className="w-full py-3">ОТКАЖИ</Button>
         {killer && motive && evidence && (
-          <Button 
-            variant="danger" 
-            className="w-full py-3" 
+          <Button
+            variant="danger"
+            className="w-full py-3"
             onClick={() => onAccuse(killer, motive, evidence)}
           >
-            EXECUTE WARRANT
+            ИЗВРШИ НАЛОГ
           </Button>
         )}
       </div>
