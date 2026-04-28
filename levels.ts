@@ -4,7 +4,7 @@ import { Level } from './types.ts';
 export const LEVELS: Record<number, Level> = {
   1: {
     id: 1,
-    title: "Вода под мостот",
+    title: "Скопје ноар",
     caseFile: "ЖРТВА: Петар Стојанов (44). ПРОНАЈДЕН: Камен Мост @ 03:00. ПРИЧИНА: Тап удар / Лацерација. ЗАБЕЛЕШКИ: Жртвата беше врвен градски претприемач. Паричникот не е пронајден. Знаци на борба.",
     locations: {
       "police_station": {
@@ -12,7 +12,7 @@ export const LEVELS: Record<number, Level> = {
         name: "МВР Скопје - Централна Станица",
         imageSource: "/assets/locations/police_station.jpg",
         description: "Станицата мириса на влажен бетон и евтин тутун. Виктор седи зад бирото, со главата во раце. Ова е единственото место во Скопје каде вистината се чувствува како товар, а не тајна.",
-        npcs: ["viktor", "sandra"],
+        npcs: ["viktor", "kiril"],
         searches: [
           { id: "s1", description: "Бирото на Виктор крие итна резерва силни аналгетици. Му даваш два. Дишењето му се смирува.", clueId: "migraine_relief" }
         ],
@@ -107,18 +107,18 @@ export const LEVELS: Record<number, Level> = {
           "v_exit": { id: "v_exit", speaker: "Виктор", text: "Оди. Не дозволувај Вардар да ја однесе вистината пред да можеме да ја фатиме.", options: [] }
         }
       },
-      "sandra": {
-        id: "sandra",
-        name: "Д-р Сандра Ковач",
+      "kiril": {
+        id: "kiril",
+        name: "Д-р Кирил Павлов",
         role: "Судски Медицински Вештак",
-        description: "Клинична, остра и нестрплива.",
-        imageSource: "/assets/characters/sandra.jpg",
+        description: "Клиничен, остар и нестрплив.",
+        imageSource: "/assets/characters/kiril.jpg",
         initialNode: "s_start",
         dialogue: {
           "s_start": {
             id: "s_start",
-            speaker: "Сандра",
-            text: "Лабораторијата е во неред. Зафатена сум. Ако немаш нешто физичко од местото на злосторство, излези.",
+            speaker: "Кирил",
+            text: "Лабораторијата е во неред. Зафатен сум. Ако немаш нешто физичко од местото на злосторство, излези.",
             options: [
               { text: "Анализирај ја сребрената мистрија.", nextId: "s_trowel", requirement: { clueId: "murder_weapon" } },
               { text: "Провери ја манжетната за ДНК.", nextId: "s_cufflink_lab", requirement: { clueId: "cufflink" } },
@@ -127,21 +127,21 @@ export const LEVELS: Record<number, Level> = {
           },
           "s_trowel": {
             id: "s_trowel",
-            speaker: "Сандра",
-            text: "Дај ми го. (Го пудрира рачката). Токму она што го мислев. Отпечатоци. Дај да проверам... Поклопување. Марија Маркова. Ја имаш, детективу.",
+            speaker: "Кирил",
+            text: "Дај ми го. (Ја пудрира рачката). Токму она што го мислев. Отпечатоци. Дај да проверам... Поклопување. Марија Маркова. Ја имаш, детективу.",
             options: [{ text: "Одлично.", nextId: "s_start", onSelect: () => {
                 window.dispatchEvent(new CustomEvent('discover_clue', { detail: 'fingerprints' }));
             }}]
           },
           "s_cufflink_lab": {
             id: "s_cufflink_lab",
-            speaker: "Сандра",
+            speaker: "Кирил",
             text: "Оваа златна 'С' има клетки на кожа фатени во гравурата. ДНК секвенцерот не лаже. Нејзина е. Се борела со него кога умрел.",
-            options: [{ text: "Добра работа, Сандра.", nextId: "s_start", onSelect: () => {
+            options: [{ text: "Добра работа, Кирил.", nextId: "s_start", onSelect: () => {
                 window.dispatchEvent(new CustomEvent('discover_clue', { detail: 'forensic_report' }));
             }}]
           },
-          "s_exit": { id: "s_exit", speaker: "Сандра", text: "И затвори ја вратата кога ќе излезеш.", options: [] }
+          "s_exit": { id: "s_exit", speaker: "Кирил", text: "И затвори ја вратата кога ќе излезеш.", options: [] }
         }
       },
       "waiter": {

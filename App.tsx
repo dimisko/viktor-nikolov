@@ -334,7 +334,7 @@ const App: React.FC = () => {
     if (!clues.includes('guard_logbook')) return "Некој на галиите бил на дежурство минатата ноќ. Оди да прашаш.";
     if (!clues.includes('missing_statuette')) return "Оди до имотот на Маркови.";
     if (!clues.includes('murder_weapon')) return "Темелно пребарај го имотот на Маркови. Не отишла далеку со него.";
-    if (!clues.includes('fingerprints')) return "Однеси ја мистријата кај Д-р Ковач во станицата.";
+    if (!clues.includes('fingerprints')) return "Однеси ја мистријата кај Д-р Павлов во станицата.";
 
     return "Го имаме сè. Оди во Станицата за налогот.";
   };
@@ -519,7 +519,7 @@ const App: React.FC = () => {
               </Button>
               {currentLocation.npcs.map(nId => {
                 const npc = currentLevel.npcs[nId];
-                let label = nId === 'viktor' ? "РАЗГОВАРАЈ СО ВИКТОР" : nId === 'sandra' ? "РАЗГОВАРАЈ СО Д-Р КОВАЧ" : `ИСПРАШАЈ ${npc.name.split(' ')[0]}`;
+                let label = nId === 'viktor' ? "РАЗГОВАРАЈ СО ВИКТОР" : nId === 'kiril' ? "РАЗГОВАРАЈ СО Д-Р ПАВЛОВ" : `ИСПРАШАЈ ${npc.name.split(' ')[0]}`;
                 return (
                   <Button key={nId} onClick={() => startDialogue(nId)} variant="dossier" className="flex-1 py-4 text-xs font-bold border-2">
                     {label}
@@ -637,7 +637,7 @@ const AccusationForm: React.FC<{
         <label className="text-[8px] sm:text-[10px] text-zinc-500 uppercase font-bold">ID НА ОСОМНИЧЕН</label>
         <select value={killer} onChange={e => setKiller(e.target.value)} className="w-full bg-zinc-900 border border-zinc-800 text-zinc-100 p-2 sm:p-3 text-[10px] sm:text-xs uppercase outline-none focus:border-red-600 appearance-none rounded-none">
           <option value="">-- ИЗБЕРИ --</option>
-          {discoveredSuspects.filter(id => id !== 'viktor' && id !== 'sandra' && id !== 'waiter' && id !== 'guard').map(id => (
+          {discoveredSuspects.filter(id => id !== 'viktor' && id !== 'kiril' && id !== 'waiter' && id !== 'guard').map(id => (
             <option key={id} value={id}>{level.npcs[id].name}</option>
           ))}
         </select>
