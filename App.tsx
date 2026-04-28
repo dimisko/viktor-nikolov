@@ -142,7 +142,7 @@ const IntroScreen: React.FC<{ onStart: () => void }> = ({ onStart }) => (
       </div>
       
       <div className="space-y-4 font-mono text-[10px] sm:text-xs text-zinc-400 leading-relaxed max-h-[50vh] overflow-y-auto pr-2">
-        <p><span className="text-zinc-100 font-bold uppercase">ПРОЛОГОТ:</span> Ти си Млад Детектив префрлен од Битола. Скопје е понасилно и мириса на стар пепел од цигари.</p>
+        <p><span className="text-zinc-100 font-bold uppercase">ПРОЛОГОТ:</span> Ти си млад детектив префрлен од Битола. Скопје е понасилно и мириса на стар пепел од цигари.</p>
         <p>Доделен си на <span className="text-zinc-100">Главниот Инспектор Виктор Николов</span>. Тој е легенда, но корупцијата му дала трајна, оневозможувачка мигрена.</p>
         <p><span className="text-red-600 font-bold uppercase">СЛУЧАЈОТ:</span> Петар Стојанов, претприемач, бил пронајден мртов во 3:00 наутро на Камен Мост. Оставен да го земе Вардар. Без сведоци.</p>
         <p>Виктор чека. Пази глава. <span className="text-zinc-100 font-bold uppercase underline">ВАЖНО:</span> Ако си заглавен или ти треба насока за докази, врати се во станицата и <span className="text-zinc-100 font-bold">РАЗГОВАРАЈ СО ВИКТОР</span> директно. Тој знае како дише овој град.</p>

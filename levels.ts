@@ -4,7 +4,7 @@ import { Level } from './types.ts';
 export const LEVELS: Record<number, Level> = {
   1: {
     id: 1,
-    title: "Скопје ноар",
+    title: "Skopje-Noir",
     caseFile: "ЖРТВА: Петар Стојанов (44). ПРОНАЈДЕН: Камен Мост @ 03:00. ПРИЧИНА: Тап удар / Лацерација. ЗАБЕЛЕШКИ: Жртвата беше врвен градски претприемач. Паричникот не е пронајден. Знаци на борба.",
     locations: {
       "police_station": {
